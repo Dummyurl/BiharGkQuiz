@@ -196,6 +196,9 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         animationFromLeft.setAnimationListener(listener);
         animationFromRight.setAnimationListener(listener);
 
+
+
+
     }
 
 
@@ -434,9 +437,10 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         txtOption2.startAnimation(animationFromRight);
         txtOption3.startAnimation(animationFromLeft);
         txtOption4.startAnimation(animationFromRight);
-        if(quextionIndex>=NO_OF_QUESTION){
+        if(quextionIndex>=NO_OF_QUESTION) {
 
             saveScore();
+
 
             CurrentAffairQuestionsDAO updateLavelPlay = new CurrentAffairQuestionsDAO(getActivity());
             updateLavelPlay.updateUserPlayQuizStatusAndScore(level.getCurrentAffairLevelID(), score);
@@ -756,5 +760,7 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
                     }
                 }).show();
     }
+
+
 }
 

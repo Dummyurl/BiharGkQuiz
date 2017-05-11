@@ -140,7 +140,7 @@ public class FragmentAboutApp extends Fragment implements View.OnClickListener {
     public DocumentView addDocumentView(CharSequence article, int type, boolean rtl) {
         final DocumentView documentView = new DocumentView(getActivity(), type);
         documentView.getDocumentLayoutParams().setTextColor(getResources().getColor(R.color.textSecondary));
-        documentView.getDocumentLayoutParams().setTextTypeface(tpHindi);
+       // documentView.getDocumentLayoutParams().setTextTypeface(tpHindi);
         documentView.getDocumentLayoutParams().setTextAlignment(TextAlignment.JUSTIFIED);
         documentView.getDocumentLayoutParams().setInsetPaddingLeft(15f);
         documentView.getDocumentLayoutParams().setInsetPaddingRight(15f);

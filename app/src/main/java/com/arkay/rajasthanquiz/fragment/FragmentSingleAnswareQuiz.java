@@ -28,8 +28,11 @@ import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.analytics.Tracker;
+import com.inmobi.ads.InMobiAdRequestStatus;
+import com.inmobi.ads.InMobiInterstitial;
 
 import java.util.List;
+import java.util.Map;
 
 public class FragmentSingleAnswareQuiz extends Fragment
         implements OnClickListener, View.OnTouchListener {
@@ -68,6 +71,9 @@ public class FragmentSingleAnswareQuiz extends Fragment
     List<PlayQuizQuestion> questionsList;
 
     private Tracker mTracker;
+
+    InMobiInterstitial interstitial;
+
     public static FragmentSingleAnswareQuiz newInstance(Bundle bundle) {
         FragmentSingleAnswareQuiz fragment = new FragmentSingleAnswareQuiz();
         fragment.setArguments(bundle);
@@ -97,6 +103,24 @@ public class FragmentSingleAnswareQuiz extends Fragment
         setViews(view);
 
 
+        // ‘this’ is used to specify context, replace it with the appropriate context as needed.
+        interstitial = new InMobiInterstitial(getActivity(), 1495707461287L, new InMobiInterstitial.InterstitialAdListener() {
+            @Override
+            public void onAdRewardActionCompleted(InMobiInterstitial ad, Map rewards) {}
+            @Override
+            public void onAdDisplayed(InMobiInterstitial ad) {}
+            @Override
+            public void onAdDismissed(InMobiInterstitial ad) {}
+            @Override
+            public void onAdInteraction(InMobiInterstitial ad, Map params) {}
+            @Override
+            public void onAdLoadSucceeded(final InMobiInterstitial ad) {}
+            @Override
+            public void onAdLoadFailed(InMobiInterstitial ad, InMobiAdRequestStatus requestStatus) {}
+            @Override
+            public void onUserLeftApplication(InMobiInterstitial ad){}
+        });
+        interstitial.load();
 
     }
 
@@ -239,16 +263,9 @@ public class FragmentSingleAnswareQuiz extends Fragment
                 boolean result = questionDAO.updateBookmark(getSelectedQuoteId(selectedQuestion), isQuoteBookMark(selectedQuestion) ? false : true);
                 if (result) {
                     if (isQuoteBookMark(selectedQuestion)) {
-
-
                         btnBookmark.setImageResource(R.drawable.ic_book_off);
-
-
                     } else {
-
                         btnBookmark.setImageResource(R.drawable.ic_book_on);
-
-
                     }
                     if(questionsList.size()>1) {
                         (questionsList.get(selectedQuestion)).setIsBookmark(isQuoteBookMark(selectedQuestion) ? false : true );

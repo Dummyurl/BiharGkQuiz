@@ -37,9 +37,12 @@ import com.arkay.rajasthanquiz.facebook.AsyncFacebookRunner;
 import com.arkay.rajasthanquiz.facebook.Facebook;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.inmobi.ads.InMobiAdRequestStatus;
+import com.inmobi.ads.InMobiInterstitial;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -88,6 +91,8 @@ public class FragmentFourOptionPlayQuiz extends Fragment
     private AsyncFacebookRunner mAsyncRunner = null;
     Typeface tp,tpHindi;
 
+    InMobiInterstitial interstitial;
+
     public interface Listener {
         public void displyHomeScreen();
         public GameData getGameData();
@@ -126,6 +131,25 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         setAnimation();
         setViews(view);
         setFacebookLoginCredential();
+
+        // ‘this’ is used to specify context, replace it with the appropriate context as needed.
+        interstitial = new InMobiInterstitial(getActivity(), 1495707461287L, new InMobiInterstitial.InterstitialAdListener() {
+            @Override
+            public void onAdRewardActionCompleted(InMobiInterstitial ad, Map rewards) {}
+            @Override
+            public void onAdDisplayed(InMobiInterstitial ad) {}
+            @Override
+            public void onAdDismissed(InMobiInterstitial ad) {}
+            @Override
+            public void onAdInteraction(InMobiInterstitial ad, Map params) {}
+            @Override
+            public void onAdLoadSucceeded(final InMobiInterstitial ad) {}
+            @Override
+            public void onAdLoadFailed(InMobiInterstitial ad, InMobiAdRequestStatus requestStatus) {}
+            @Override
+            public void onUserLeftApplication(InMobiInterstitial ad){}
+        });
+        interstitial.load();
 
     }
 
@@ -482,6 +506,9 @@ public class FragmentFourOptionPlayQuiz extends Fragment
             getActivity().getSupportFragmentManager().beginTransaction().replace( R.id.ha_flContentContainer1, mListener.getFragmentQuizCompleted() ).addToBackStack( "tag" ).commit();
 
             blankAllValue();
+
+            if(interstitial.isReady())
+                interstitial.show();
 
 
         }else{

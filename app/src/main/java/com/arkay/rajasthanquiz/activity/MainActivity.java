@@ -43,6 +43,7 @@ import com.arkay.rajasthanquiz.handler.DatabaseHelper;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.ConnectionDetector;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.inmobi.sdk.InMobiSdk;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -138,6 +139,8 @@ public class MainActivity extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        InMobiSdk.init(this, "7459daf7a94f4731830f0a8af80e7112"); //'this' is used specify context
 
         checkDB();
 
@@ -339,16 +342,6 @@ public class MainActivity extends AppCompatActivity
         mFragmentSingleAnswareQuiz = FragmentSingleAnswareQuiz.newInstance(bundle);
         getSupportFragmentManager().beginTransaction().replace(R.id.ha_flContentContainer1, mFragmentSingleAnswareQuiz).addToBackStack("tag").commit();
     }
-
-//    public void PlayQuiz(int isWhichType,int levelNo){
-//        Bundle bundle = new Bundle();
-//        playQuizFragment = PlayQuizFragment.newInstance(bundle);
-//        playQuizFragment.setListener(this);
-//        bundle.putInt(MainActivity.isWhichType,isWhichType);
-//        bundle.putInt(Constants.CURRENT_AFFAIR_LEVEL_ID,levelNo);
-//        getSupportFragmentManager().beginTransaction().replace(R.id.ha_flContentContainer1, playQuizFragment).addToBackStack("tag").commit();
-//    }
-
 
 
     public GameOverFragment GameOver(){
