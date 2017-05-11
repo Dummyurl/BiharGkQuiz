@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/relativelayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/next_prev_btn__effect_size"
+        android:layout_marginRight="@dimen/next_prev_btn__effect_size"
+        android:layout_marginTop="@dimen/top_button_left_right"
+        android:background="@drawable/background_question"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/button_margin"
+            android:layout_height="@dimen/button_margin"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/imgCircle"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/top_button_left_right"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/red_circle"
+            android:layout_alignParentEnd="true" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+                <TextView
+                    android:id="@+id/quizQuestion"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/top_sub_heading"/>
+
+                <TextView
+                    android:id="@+id/option1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:layout_marginTop="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textSecondary"
+                    android:textSize="@dimen/txt_size_title_small"/>
+                <TextView
+                    android:id="@+id/option2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:layout_marginTop="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textSecondary"
+                    android:textSize="@dimen/txt_size_title_small"/>
+                <TextView
+                    android:id="@+id/option3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:layout_marginTop="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textSecondary"
+                    android:textSize="@dimen/txt_size_title_small"/>
+                <TextView
+                    android:id="@+id/option4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:layout_marginTop="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textSecondary"
+                    android:textSize="@dimen/txt_size_title_small"/>
+
+                <TextView
+                    android:id="@+id/rightAns"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/top_button_left_right"
+                    android:layout_marginRight="@dimen/top_button_left_right"
+                    android:layout_marginTop="@dimen/top_button_left_right"
+                    android:gravity="left"
+                    android:text=""
+                    android:textColor="@color/textPrimary"
+                    android:textSize="@dimen/txt_size_title_small"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

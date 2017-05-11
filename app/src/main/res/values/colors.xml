@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#ff9800</color>
+    <color name="colorPrimaryDark">#e58900</color>
+    <color name="colorAccent">#00bcd4</color>
+    <color name="yellow">#f0ca45</color>
+    <color name="green">#75ce66</color>
+    <color name="sky">#4cb1ca</color>
+
+    <color name="score_board_green">#5eb000</color>
+    <color name="score_board_red">#f95353</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+    <color name="textHintColor">#9e9e9e</color>
+    <color name="white">#ffffff</color>
+    <color name="trans_background">#55000000</color>
+    <color name="red">#f44336</color>
+    <color name="divider">#bdbdbd</color>
+
+    <string-array name="app_serial_bg">
+        <item>#fed201</item>
+        <item>#f93b2f</item>
+        <item>#48dc6c</item>
+        <item>#5752d0</item>
+        <item>#2dbae7</item>
+        <item>#fe4a65</item>
+        <item>#ff5534</item>
+    </string-array>
+
+</resources>

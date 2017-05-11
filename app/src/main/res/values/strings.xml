@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Application Related Parameter -->
+    <string name="app_name">Rajasthan Quiz</string>
+    <string name="app_hash_tag">rajasthanquiz</string>
+    <string name="appname">Rajasthan \n Quiz</string>
+
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.arkay.rajsthanquiz</string>
+    <string name="copyright">" &#169;  2017"</string>
+    <string name="arkay_url">"www.arkayapps.com"</string>
+    <string name="web_url_for_webview">"http://www.arkayapps.com"</string>
+    <string name="privacy_policy_url">"http://www.arkayapps.com/privacy_policy.php"</string>
+    <string name="action_settings">Setting</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="about_text">मनुष्य एक सामाजिक प्राणी है खान – पान और रहन – सहन के अतिरिक्त उसकी कुछ अन्य आवश्यकताऍ भी है इन आवश्यकताओं की पूर्ति के लिए इसे कुछ ना कुछ साधन ढूंढने पड़ते है
+ओर साधन का एक मूल है ज्ञान और यही ज्ञान हमें इस साधन को ढूंढने ने मे मदद करेगा ज्ञान के बिना है सब अधूरा... हम दुनिया भर
+की जानकारी को जानने के लिए सदा उत्सुक रहते हैं। जब हमारे ज्ञानेंद्रियो में जानकारियों का संग्रह हो जाता है, तभी हमारा दिमाग तेज गति से
+सक्रिय होकर ज्ञान को जन्म देकर उसके अनुसार ही बातों का अर्थ लगाता है। इसीलिए हमारे पास ज्ञान का होना बहुत ही आवश्यक है आज ऐसी कोई जगह नहीं है
+जहाँ सामान्य ज्ञान की जरुर ना पड़ी हो हर क्षेत्र में जनरल नॉलेज की आवश्यकता होती ही है।
+विद्यार्थी को हर तरह की परिक्षाओं से गुजरना पड़ता है जैसे की GPSC, UPSC, IBPS Exam, Bank Exam, NDA , CDS, IES, STATE PSC, CWE
+आदि परीक्षाओं की तयारी के लिए ज्ञान का भंडार होना जरुरी है।
+वर्तमान समय में सामान्य ज्ञान के लिए कई अलग अलग माध्यम से माहिती पाइ जाती है जैसे की भारत, विश्व, विज्ञान, कंप्यूटर, राजनीती, भूगोल, इतिहास, धर्म, साहित्य,
+करंट अफेयर्स आदि से सबंधित महत्वपूर्ण घटनाओं पर आधारित है कोई भी भूल रह गई हो तो ई –
+मेईल द्वारा हमे बता सकते हो ताकि हम उसे सुधार सके।</string>
+
+    <string name="profile">Profile</string>
+    <string name="music">Music</string>
+    <string name="sound">Sound</string>
+    <string name="vibration">Vibration</string>
+    <string name="leaderboard">Leaderboard</string>
+    <string name="about">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_arkay_app">About Arkay Apps</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="gk_quiz_power">GK Quiz Power</string>
+    <string name="kids_fun">Kindergarten Fun</string>
+    <string name="more_app">More Apps</string>
+    <string name="like_us">Like Us</string>
+    <string name="share_app">Share Apps</string>
+    <string name="rate_app">Rate Apps</string>
+    <string name="name">Name</string>
+    <string name="subject">Subject</string>
+    <string name="email">Email-id</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="msg">Messege</string>
+    <string name="star">Star</string>
+    <string name="gems">Gems</string>
+    <string name="score">Score</string>
+    <string name="you_earned">You Earned</string>
+    <string name="spend">Spend</string>
+    <string name="gems_to_get">Gems to get</string>
+    <string name="seconds">Seconds</string>
+    <string name="cancel">Cancel</string>
+    <string name="purchase">Purchase</string>
+
+    <string name="share_dialog_msg">Rat</string>
+    <string name="app_short_name">Rajasthan Quiz</string>
+    <string name="push_notification_detail_msg">Rajasthan Quiz new message receive</string>
+    <string name="pusth_notification_new_level_msg">New Level publish click for more detail</string>
+    <string name="pusth_notification_info_msg">New Info receive click for more detail</string>
+
+
+    <string name="loading">Loading…</string>
+    <string name="oops_game_over">Oops! Game Over</string>
+
+    <string name="error_email_field_required">Email is required</string>
+    <string name="error_password_required">Password is required</string>
+    <string name="actionloginFB">Log In with Facebook</string>
+    <string name="actionloginGP">Log In With Google+</string>
+    <string name="facebook_app_id">755300331269509</string>
+    <string name="go_to">Go TO</string>
+    <string name="enter_question_no">Enter Question No</string>
+
+    <!-- Social Media and Google Game service Related Parameter -->
+    <!--<string name="icon_url">https://lh3.googleusercontent.com/-WzOJ8JFf8-0/VmVujIBXt2I/AAAAAAAABGg/nu56qJOBKNg/s512-Ic42/icon.png</string>-->
+
+    <string name="facebook_id">755300331269509</string>
+    <string name="err_status_code">Server not responding. Status code %1$s.</string>
+    <string name="err_file_no_available">Selected file is unavailable. Please select another.    </string>
+    <string name="share_msg">Let me recommend  Rajasthan Quiz android Apps you can Download it from here:</string>
+
+
+    <!--<string name="sent_push_notification_info_to_server">http://arkayapps.com/funwithmaths/getuser.php</string>-->
+    <string name="get_current_affiar_question_from_web">http://arkayapps.com/newgkhindi/ca_getqa_bylevelid.php?levelid=</string>
+    <!--<string name="get_current_affair_level_url">http://arkayapps.com/funwithmaths/ca_getlevel.php?levelid=</string>-->
+
+
+    <string name="hello_world">Hello world!</string>
+    <!--<string name="user_profile_photo">http://baobaoloveyou.com/flowingdrawer_icon.png</string>-->
+    <!-- End Web Services -->
+
+    <string name="push_notification_sender_id">423961323926</string>
+    <!--<string name="facebook_page_url">https://www.facebook.com/Fun-With-Maths-447263425465208</string>-->
+    <string name="website_url">http://www.arkayapps.com</string>
+    <string name="google_plus_page_url">https://plus.google.com/105788922227762645216</string>
+
+
+    <string name="facebook">Facebook</string>
+    <string name="share_via">Share via Applications</string>
+    <string name="share_quote_by">Share Quote Using</string>
+
+    <!-- Real time Game Service Related Parameter-->
+    <string name="signing_in">Signing in with Google</string>
+    <string name="signing_out">Signing out</string>
+    <string name="you_are_signed_in">You are signed in with Google.</string>
+    <string name="sign_out">Sign out</string>
+    <string name="signin_other_error">There was an issue with sign in.  Please try again later.</string>
+
+    <string name="get_current_affair_level">http://arkayapps.com/newgkhindi/getCurrentAffair.php?offset=</string>
+    <string name="get_current_affair_between_value">http://arkayapps.com/newgkhindi/ca_getlevel_between.php?levelid1=</string>
+    <string name="get_current_affair_level_size">http://arkayapps.com/newgkhindi/ca_getlevalsize.php</string>
+    <string name="get_gk_news_url">http://arkayapps.com/newgkhindi/getRajsthangknews.php?offset=</string>
+    <string name="get_story_by_id_url">http://arkayapps.com/newgkhindi/getnews_getnewsbyid_b.php?newsid=</string>
+    <string name="get_gk_news_image_url">http://arkayapps.com/newgkhindi/</string>
+    <string name="share_img_name">"rajsthanquiz.png"</string>
+    <string name="get_famous_person_url">http://arkayapps.com/newgkhindi/rajesthan_services/get_all_famous_person.php?offset=</string>
+    <string name="get_famous_place_url">http://arkayapps.com/newgkhindi/rajesthan_services/get_all_famous_place.php?offset=</string>
+
+    <string name="level">Level </string>
+    <string name="level_text">Level : </string>
+    <string name="finished">Finished..</string>
+    <string name="not_completed">Failed.</string>
+    <string name="play_next">Play Next</string>
+    <string name="success_msg">Great Job!</string>
+    <string name="play_again">Play Again</string>
+    <string name="failure_msg">Failure is the Key to Success</string>
+
+    <string name="invite_players">Invite friends</string>
+    <string name="see_invitations">See invitations</string>
+    <string name="inv_popup_text">Incoming invitation!</string>
+    <string name="accept_popup_invite">Accept!</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="game_problem">An error occurred while starting the game. Please try again.</string>
+    <string name="is_inviting_you">is challenging you to a game!</string>
+
+
+    <string name="termofuse">Rajasthan Quiz term of user</string>
+
+    <!-- Alert Message -->
+    <string name="no_internet_connection_title">No Internet Connection</string>
+    <string name="no_internet_connection_detail">First time require internet connection.</string>
+    <string name="signed_with_google">You are signed in with Google. Click here Sign Out</string>
+    <string name="login_as_guest_long">Login as Guest Click here Login</string>
+    <string name="login_as_guest_short">Login is Guest</string>
+    <string name="google_sing_out">Google Sign Out</string>
+    <string name="really_sign_out">Do you really want to sign out?</string>
+
+    <string name="great">Great!</string>
+    <string name="oops">Oops!</string>
+    <string name="completed_level">You have completed</string>
+    <string name="successfully">Successfully !</string>
+    <string name="home">Home</string>
+    <string name="show_ans">Show Answer</string>
+    <string name="ans">Ans:</string>
+    <string name="total_score">Total Score</string>
+    <string name="highest_score">Highest Score</string>
+    <string name="level_score">Level Score</string>
+    <string name="share_score">Share Score</string>
+    <string name="not_sign_in">Not sign in</string>
+    <string name="require_sign_in_achi">You require sign in to show Achievement.</string>
+    <string name="require_sign_in_leader">You require sign in to show leaderboard.</string>
+
+    <string name="connection_not_found">Connection not found</string>
+    <string name="show_achi_req_connection_achi">Show achievement required internet connection</string>
+    <string name="show_achi_req_connection_leader">Show Leaderboard required internet connection</string>
+
+    <string name="visit_web_site_inte_conne_require">Visit website Internet connection required</string>
+    <string name="sync_database_inte_conne_require">Internet connection require to Sync Questions</string>
+
+
+    <string name="require_sign_play_online">You require sign in to Play online.</string>
+    <string name="play_online_requ_inte_conn">Play online required internet connection</string>
+
+    <string name="no_enough_question">Not Enough Question</string>
+    <string name="require_ten_question">Min 10 question need to Sync.</string>
+
+    <string name="first_time_requ_inte_conn">First Time required internet connection</string>
+
+    <string name="select_level">Select Level</string>
+    <string name="lets_learn">Let\'s Learn</string>
+    <string name="gk_news">Gk News</string>
+    <string name="famous_person">Famous Person</string>
+    <string name="famous_place">Famous Place</string>
+    <string name="play_quiz">Play Quiz</string>
+    <string name="current_affair">Current Affair</string>
+    <string name="current_affair_level">Current Affair Level</string>
+
+    <string name="category_quiz">Category Quiz</string>
+    <string name="select_category">Select Category</string>
+    <string name="read_more">READ MORE</string>
+
+    <string name="str_btn1">राजस्थान</string>
+    <string name="str_btn2">कला संस्कृति</string>
+    <string name="str_btn3">संगीत-उत्सव</string>
+    <string name="str_btn4">धर्म</string>
+    <string name="str_btn5">नदियाँ व झीलें</string>
+    <string name="str_btn6">स्थापत्यकला</string>
+    <string name="str_btn7">उद्योग</string>
+    <string name="str_btn8">इतिहास</string>
+    <string name="str_btn9">अभयारण्य</string>
+    <string name="str_btn10">भूगोल</string>
+    <string name="str_btn11">प्रचलित नगर</string>
+    <string name="str_btn12">राजनीति</string>
+
+    <string-array name="serial_level">
+        <item>pink_rect</item>
+        <item>green_rect</item>
+    </string-array>
+
+    <string name="get_news_greater_than_id">http://arkayapps.com/newgkhindi/rajesthan_services/get_gknews_less_id.php</string>
+    <string name="get_famous_place_greater_than_id">http://arkayapps.com/newgkhindi/rajesthan_services/get_all_famous_place_less_id.php</string>
+    <string name="get_famous_person_greater_than_id">http://arkayapps.com/newgkhindi/rajesthan_services/get_all_famous_person_less_id.php</string>
+    <!--<string name="get_img_path">http://192.168.1.8/newsapp/</string>-->
+
+    <string name="google_maps_key"
+        templateMergeStrategy="preserve"
+        translatable="false">AIzaSyAXm0Q8OsGrBwIG64JEJTrNv9V32Uo5Qsg</string>
+</resources>

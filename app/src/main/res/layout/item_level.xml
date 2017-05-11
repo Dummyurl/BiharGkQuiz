@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:quote="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="@dimen/margin_sixteen"
+        android:layout_marginRight="@dimen/margin_sixteen"
+        android:layout_marginTop="@dimen/button_margin"
+        android:layout_marginBottom="@dimen/button_margin"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="@dimen/dialog_button_height"
+                android:id="@+id/rel"
+                android:background="@drawable/gray_pnchkon"
+                android:layout_height="@dimen/dialog_button_height">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/top_sub_heading"
+        android:text=""
+        android:layout_centerInParent="true"
+            android:id="@+id/txtNumber"
+        android:textColor="@color/textSecondary"/>
+                <ImageView
+                    android:layout_width="@dimen/top_toolbal_left_pedding"
+                    android:layout_height="@dimen/top_toolbal_left_pedding"
+                    android:id="@+id/imgStatus"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/margin_sixteen"
+                    android:layout_marginTop="@dimen/margin_sixteen"
+                    />
+            </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_centerVertical="true"
+            android:id="@+id/txtLevelName"
+            android:layout_toEndOf="@+id/rel"
+            android:layout_toRightOf="@+id/rel"
+            android:textSize="@dimen/top_sub_heading"
+            android:layout_marginLeft="@dimen/margin_sixteen"
+            android:textColor="@color/textPrimary"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+        <com.github.lzyzsd.circleprogress.DonutProgress
+            android:id="@+id/timer_progress"
+            quote:donut_text_size="@dimen/dimen_12sp"
+            android:layout_width="@dimen/margin_forty"
+            android:layout_height="@dimen/margin_forty"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Q. 10"
+            android:textSize="@dimen/dimen_12sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/textSecondary"
+            android:id="@+id/txtNoOfQue"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/timer_progress"/>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/relativeMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white">
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relativeLayout4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:background="@color/white">-->
+
+                <TextView
+                    android:id="@+id/lblPublish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Publish Date"
+                    android:textSize="@dimen/text_10sp"
+                    android:textColor="@color/textHintColor"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <!--<TextView-->
+                    <!--android:id="@+id/txtStoryTitle"-->
+                    <!--style="@style/style_top_strory_title"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Title"-->
+                    <!--android:layout_below="@+id/lblPublish" />-->
+
+            <!--<com.arkay.rajsthanquiz.customviews.AutoresizeEditText-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/drawder_left_right_text_padding"-->
+                <!--android:id="@+id/txtStoryTitle"-->
+                <!--android:scrollbars="none"-->
+                <!--android:text="vbf"-->
+                <!--android:textColor="@color/colorAccent"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="@dimen/text_20sp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/lblPublish"-->
+                <!--/>-->
+
+            <!--</RelativeLayout>-->
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+               >
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/rel1"
+                    android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/flag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:padding="1dp"
+                    android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="zgbfdgdfg"
+                        android:id="@+id/txtStoryTitle"
+                        android:padding="@dimen/about_text_size"
+                        android:layout_alignBottom="@+id/flag"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/about_text_size"
+                        android:background="@color/trans_background"/>
+                </RelativeLayout>
+
+                <!--<android.support.design.widget.FloatingActionButton-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/fab"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--app:layout_anchor="@id/flag"-->
+                    <!--app:layout_anchorGravity="bottom|right|end"-->
+                    <!--android:src="@drawable/book_off"-->
+                    <!--android:clickable="true"-->
+                    <!--android:layout_marginBottom="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_alignBottom="@+id/flag"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_alignParentEnd="true" />-->
+
+                <!--<ScrollView-->
+                    <!--android:id="@+id/scrollViewdesc"-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_marginTop="@dimen/margin_5dp"-->
+                    <!--android:layout_below="@+id/flag"-->
+                    <!--&gt;-->
+
+                <!--<com.vj.widgets.AutoResizeTextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:ellipsize="none"-->
+                    <!--android:gravity="center"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:layout_below="@+id/flag"-->
+                    <!--android:text="Auto Resized Text, max 1 line"-->
+                    <!--android
+                    :textSize="100sp" />-->
+                <!--<TextView-->
+                    <!--android:id="@+id/txtTimeAgo"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="Time"-->
+                    <!--android:layout_below="@+id/rel1"-->
+                    <!--android:textColor="@color/textHintColor" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/lblStoryDetail"-->
+                    <!--style="@style/style_description_news_txt"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="Description"-->
+                    <!--android:layout_below="@+id/txtTimeAgo"-->
+                    <!--android:textColor="@color/text_color" />-->
+
+                <!--<com.arkay.newsapp.customviews.AutoresizeEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_marginTop="@dimen/margin_5dp"-->
+                    <!--android:id="@+id/lblStoryDetail"-->
+                    <!--android:scrollbars="none"-->
+                    <!--android:textSize="@dimen/text_18sp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_below="@+id/txtTimeAgo"-->
+                    <!--/>-->
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/rel1"
+                    android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/option_button_padding"
+                    android:id="@+id/lblStoryDetail"
+                    android:scrollbars="none"
+                    android:textSize="@dimen/text_15sp"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/next_prev_left_right_margin"
+                    />
+                </ScrollView>
+
+                <!--<com.arkay.newsapp.customviews.AutoResizeTextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Auto Resized Text"-->
+                    <!--android:textSize="500sp" />-->
+
+
+
+                <!--</ScrollView>-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/newsindex"-->
+                    <!--android:paddingLeft="@dimen/margin_5dp"-->
+                    <!--android:paddingRight="@dimen/margin_5dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="@dimen/text_10sp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:text="1"-->
+                    <!--android:background="@color/colorAccent"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_alignParentEnd="true" />-->
+
+
+            </RelativeLayout>
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relativeLayout5"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_above="@+id/lblSponser"-->
+                <!--android:background="@color/white">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/btnshare"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Publish Date"-->
+                    <!--android:src="@drawable/ic_share_grey"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_alignParentEnd="true" />-->
+
+            <!--</RelativeLayout>-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/lblSponser"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:gravity="bottom"-->
+                <!--android:layout_marginLeft="@dimen/margin_5dp"-->
+                <!--android:text="Top"-->
+                <!--android:textSize="@dimen/text_10sp"-->
+                <!--android:textColor="@color/colorAccent"-->
+                <!--android:layout_centerVertical="false"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:layout_alignParentStart="true" />-->
+
+
+        </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:id="@+id/relative"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/imgTop"
+            android:layout_height="@dimen/home_page_swami_image_size"
+            android:background="@drawable/top"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5 / 10"
+                    android:textColor="@color/white"
+                    android:id="@+id/txtConunt"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/top_toolbal_user_info_txt_size"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linearLayout6"
+        android:layout_weight="2"
+        android:layout_below="@+id/relative"
+        android:layout_height="@dimen/select_level_height"
+        android:layout_marginLeft="@dimen/button_margin_5dp"
+        android:layout_marginRight="@dimen/button_margin_5dp"
+        android:background="@drawable/qstn">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/top_button_left_right"
+            android:layout_marginRight="@dimen/top_button_left_right"
+            android:layout_marginTop="@dimen/about_text_size"
+            android:layout_marginBottom="@dimen/top_toolbal_size"
+            android:id="@+id/scrollView">
+
+            <TextView
+                android:id="@+id/txtQuestion"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/game_middle_line"
+                android:text=""
+                android:layout_gravity="center"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/top_sub_heading"/>
+        </ScrollView>
+
+    </RelativeLayout>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_bookmark"
+        android:layout_alignBottom="@+id/linearLayout6"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="@dimen/home_screen_top_button_left_right_margin"
+        android:layout_marginRight="@dimen/about_text_size"
+        android:background="@drawable/ic_book_off"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_below="@+id/linearLayout6"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/about_text_size"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_110dp"
+                android:id="@+id/imgAns"
+                android:background="@drawable/rounded_button"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ans"
+                android:id="@+id/ans"
+                android:textSize="@dimen/top_sub_heading"
+                android:layout_marginLeft="@dimen/list_quote_top_bottom_left_right_margin"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/txtAnsware"
+                android:textSize="@dimen/top_sub_heading"
+                android:layout_marginLeft="@dimen/about_text_size"
+                android:layout_toRightOf="@+id/ans"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnshowanswer"
+            android:layout_marginTop="@dimen/next_prev_left_right_margin"
+            android:layout_below="@+id/imgAns"
+            android:theme="@style/AppTheme.Button"
+            android:text="@string/show_ans"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/linearLayout5"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:background="@drawable/ic_pre"
+            >
+
+        </ImageButton>
+
+
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_nextbtn"
+            android:layout_gravity="right">
+
+
+        </ImageButton>
+
+    </FrameLayout>
+</RelativeLayout>

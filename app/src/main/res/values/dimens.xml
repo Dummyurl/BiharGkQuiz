@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="menu_button_width">480dp</dimen>
+    <dimen name="button_border">1dp</dimen>
+    <dimen name="button_redious">6dp</dimen>
+    <dimen name="button_margin">10dp</dimen>
+    <dimen name="button_margin_5dp">5dp</dimen>
+    <dimen name="button_margin_minus">-10dp</dimen>
+    <dimen name="minus_50dp">-50dp</dimen>
+
+
+
+        <dimen name="margin_sixteen">16dp</dimen>
+        <dimen name="top_toolbal_size">56dp</dimen>
+    <dimen name="top_toolbal_size_left">240dp</dimen>
+    <dimen name="dmn_24dp">24dp</dimen>
+    <dimen name="top_toolbal_header_size">100dp</dimen>
+    <dimen name="top_toolbal_image_size">60dp</dimen>
+    <dimen name="top_toolbal_left_pedding">20dp</dimen>
+    <dimen name="top_toolbal_left_margin">10dp</dimen>
+    <dimen name="top_toolbal_user_info_txt_size">14sp</dimen>
+    <dimen name="dimen_8sp">8sp</dimen>
+
+    <integer name="int100">100</integer>
+    <dimen name="text_50sp">50sp</dimen>
+    <dimen name="text_30sp">30sp</dimen>
+    <dimen name="text_20sp">20sp</dimen>
+    <dimen name="text_22sp">22sp</dimen>
+    <dimen name="text_15sp">15sp</dimen>
+    <dimen name="text_10sp">10sp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <dimen name="arrowStrokeWidth">3dp</dimen>
+
+    <dimen name="list_quote_top_bottom_left_right_margin">10dp</dimen>
+    <dimen name="select_level_height">200dp</dimen>
+    <dimen name="select_top_bottom_margin">20dp</dimen>
+    <dimen name="txt_size_title_small">14sp</dimen>
+    <dimen name="dimen_12sp">12sp</dimen>
+        <dimen name="login_banner_h">250dp</dimen>
+
+    <dimen name="dashed_dimen">70dp</dimen>
+    <dimen name="dmn_72dp">72dp</dimen>
+    <dimen name="next_prev_btn_size">64dp</dimen>
+    <dimen name="margin_thirty_six">36dp</dimen>
+    <dimen name="margin_twenty_eight">28dp</dimen>
+    <dimen name="next_prev_btn__effect_size">8dp</dimen>
+    <dimen name="top_button_left_right">10dp</dimen>
+    <dimen name="top_button_left_right_plus">20dp</dimen>
+    <dimen name="top_button_left_right_minus">6dp</dimen>
+
+    <dimen name="home_page_swami_image_size">100dp</dimen>
+
+    <dimen name="home_screen_top_button_left_right_margin">25dp</dimen>
+    <dimen name="option_button_padding">5dp</dimen>
+
+    <dimen name="game_middle_line">2dp</dimen>
+
+    <dimen name="margin_150dp">150dp</dimen>
+    <dimen name="margin_120dp">120dp</dimen>
+    <dimen name="margin_100dp">100dp</dimen>
+    <dimen name="margin_45dp">45dp</dimen>
+    <dimen name="margin_110dp">110dp</dimen>
+
+    <!--<dimen name="bookmark_text_size">15sp</dimen>-->
+
+    <dimen name="next_prev_button_width_height">50dp</dimen>
+    <dimen name="next_prev_left_right_margin">5dp</dimen>
+    <dimen name="menu_button_text_size">25sp</dimen>
+    <dimen name="menu_button_top_margin">10dp</dimen>
+    <dimen name="menu_button_layout_width">250dp</dimen>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="margin_forty">40dp</dimen>
+    <dimen name="realtime_timer_progress_size">50dp</dimen>
+
+
+        <dimen name="news_img_size">80dp</dimen>
+
+    <dimen name="story_text_header_text_size">20sp</dimen>
+    <dimen name="about_text_size">18sp</dimen>
+
+    <dimen name="dimen_180dp">180dp</dimen>
+    <dimen name="gk_info_img_detail_width">216dp</dimen>
+    <dimen name="gk_info_img_detail_height">144dp</dimen>
+        <dimen name="list_divider_hight">0.5dp</dimen>
+
+    <dimen name="game_progress_hight">4dp</dimen>
+
+    <dimen name="faveroute_btn_top_margin">-24dp</dimen>
+    <dimen name="minus_90dp">-90dp</dimen>
+
+    <dimen name="game_over_top_msg_margin">30dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+
+    <dimen name="game_over_level_score_margin">14dp</dimen>
+    <dimen name="game_over_button_margin">20dp</dimen>
+
+    <dimen name="drawder_top_bottom_padding">8dp</dimen>
+    <dimen name="drawder_left_right_padding">10dp</dimen>
+    <dimen name="drawder_left_right_text_padding">5dp</dimen>
+
+    <dimen name="dashboard_button_padding">30dp</dimen>
+
+    <dimen name="gk_info_news_list_padding">5dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+
+    <integer name="toolbar_left_right_padding">15</integer>
+    <dimen name="margin_23dp">23dp</dimen>
+
+    <integer-array name="time_frame_1">
+        <item>0</item>
+        <item>400</item>
+        <item>300</item>
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+    </integer-array>
+
+    <integer-array name="time_frame_2">
+        <item>0</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
+        <item>500</item>
+    </integer-array>
+
+    <integer-array name="time_frame_3">
+        <item>0</item>
+        <item>400</item>
+        <item>100</item>
+        <item>300</item>
+        <item>200</item>
+        <item>500</item>
+    </integer-array>
+
+    <integer-array name="time_frame_4">
+        <item>200</item>
+        <item>100</item>
+        <item>0</item>
+        <item>300</item>
+        <item>500</item>
+        <item>400</item>
+    </integer-array>
+
+    <integer-array name="time_frame_5">
+        <item>500</item>
+        <item>0</item>
+        <item>100</item>
+        <item>300</item>
+        <item>400</item>
+        <item>200</item>
+    </integer-array>
+
+    <integer-array name="time_frame_6">
+        <item>200</item>
+        <item>300</item>
+        <item>100</item>
+        <item>400</item>
+        <item>0</item>
+        <item>500</item>
+    </integer-array>
+
+    <integer-array name="time_frame_7">
+        <item>300</item>
+        <item>200</item>
+        <item>400</item>
+        <item>100</item>
+        <item>500</item>
+        <item>0</item>
+    </integer-array>
+
+    <dimen name="dmn_7dp">7dp</dimen>
+    <dimen name="px10">10px</dimen>
+    <dimen name="px5">5px</dimen>
+    <dimen name="px3">3px</dimen>
+
+
+
+
+    <!-- For old layout-->
+    <dimen name="mail_layout_top_Left_right_bottom_margin">10dp</dimen>
+    <dimen name="display_ans_top_margin">21dp</dimen>
+    <dimen name="timer_text_size">30sp</dimen>
+    <dimen name="question_left_right_margin">10dp</dimen>
+    <dimen name="top_layout_height">60dp</dimen>
+    <dimen name="level_top_margin">20sp</dimen>
+
+    <dimen name="true_false_button_size">120dp</dimen>
+    <dimen name="true_false_button_size_multi_player">80dp</dimen>
+    <dimen name="smile_button_size_multi_player">100dp</dimen>
+
+    <dimen name="true_false_top_margin">30dp</dimen>
+
+    <dimen name="skip_button_width">90dp</dimen>
+    <dimen name="skip_button_height">30dp</dimen>
+    <dimen name="skip_button_up_size">-20dp</dimen>
+
+    <dimen name="true_false_top_margin_left_multipler">30dp</dimen>
+
+    <!-- Dialog  -->
+    <dimen name="top_heading">18sp</dimen>
+    <dimen name="top_sub_heading">16sp</dimen>
+    <dimen name="dimen_13sp">13sp</dimen>
+    <dimen name="top_sub_margin">20sp</dimen>
+    <dimen name="dialog_button_width">268dp</dimen>
+    <dimen name="dialog_button_height">50dp</dimen>
+    <dimen name="dialog_button_text_size">22sp</dimen>
+    <dimen name="margin_130dp">130dp</dimen>
+
+    <dimen name="level_txt_size">20sp</dimen>
+    <dimen name="question_txt_size">40sp</dimen>
+    <dimen name="animation_txt_size">100sp</dimen>
+
+    <dimen name="bottom_margin">20dp</dimen>
+    <dimen name="home_banner_w_size">240dp</dimen>
+    <dimen name="home_banner_size">180dp</dimen>
+
+</resources>
