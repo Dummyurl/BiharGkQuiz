@@ -3,10 +3,10 @@
 
     <!-- Application Related Parameter -->
     <string name="app_name">Rajasthan Quiz</string>
-    <string name="app_hash_tag">rajasthanquiz</string>
+    <string name="app_hash_tag">rajasthanq uiz</string>
     <string name="appname">Rajasthan \n Quiz</string>
 
-    <string name="app_url">https://play.google.com/store/apps/details?id=com.arkay.rajsthanquiz</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.arkay.rajasthanquiz</string>
     <string name="copyright">" &#169;  2017"</string>
     <string name="arkay_url">"www.arkayapps.com"</string>
     <string name="web_url_for_webview">"http://www.arkayapps.com"</string>

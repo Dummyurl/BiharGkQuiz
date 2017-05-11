@@ -7,7 +7,7 @@
 
     </include>
 
-    <com.arkay.rajsthanquiz.customviews.SwipeRefreshLayoutBottom
+    <com.arkay.rajasthanquiz.customviews.SwipeRefreshLayoutBottom
     android:id="@+id/swipe_refresh_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -20,5 +20,5 @@
         android:clickable="true"
         android:dividerHeight="@dimen/list_divider_hight"
         android:divider="@color/colorAccent" />
-    </com.arkay.rajsthanquiz.customviews.SwipeRefreshLayoutBottom>
+    </com.arkay.rajasthanquiz.customviews.SwipeRefreshLayoutBottom>
 </LinearLayout>
