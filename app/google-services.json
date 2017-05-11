@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "459314908788",
+    "project_id": "rajasthan-quiz"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459314908788:android:c21d1669851d4161",
+        "android_client_info": {
+          "package_name": "com.arkay.rajasthanquiz"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK48fiK6iDIJGfH3dg2yVDZTXaf9tqbWQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-51023730-25"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

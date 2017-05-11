@@ -40,6 +40,8 @@ import com.arkay.rajasthanquiz.facebook.AsyncFacebookRunner;
 import com.arkay.rajasthanquiz.facebook.Facebook;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
@@ -87,6 +89,8 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
     Typeface tp;
 
 
+    InterstitialAd mInterstitialAd;
+
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
 
@@ -130,6 +134,11 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
         // Obtain the shared Tracker instance.
         MainApplication application = (MainApplication) getActivity().getApplication();
         mTracker = application.getDefaultTracker();
+
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.admob_app_let_learn_unit_id));
+
+        requestNewInterstitial();
     }
 
     @Override
@@ -139,6 +148,29 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
         mTracker.setScreenName("Rajasthan Quiz Lets Learn");
         mTracker.send(new HitBuilders.ScreenViewBuilder().build());
 
+    }
+
+    private void requestNewInterstitial() {
+
+        AdRequest adRequest;
+        if(getResources().getBoolean(R.bool.isTestMode)){
+            adRequest = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .addTestDevice("0C2DF43E6E70766851B6A3E5EE46A9B8")
+                    .addTestDevice("E10CFA7B6C484AD18A1356C3E659CC09")
+                    .addTestDevice("54BDDE3D2B6D19827B248558A4971B35")
+                    .addTestDevice("AFE866BB9099AEDD026BF576D2EB4889")
+                    .addTestDevice("B81C8CF2B009D919B43B69D0FEC57EE2")
+                    .addTestDevice("B81C8CF2B009D919B43B69D0FEC57EE2")
+                    .addTestDevice("D4F9CC518EADF120DDA2EFF49390C315")
+
+                    .build();
+
+        }else{
+            adRequest = new AdRequest.Builder().build();
+        }
+
+        mInterstitialAd.loadAd(adRequest);
     }
     private void setViews(View view)
     {
@@ -469,6 +501,9 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
 
             blankAllValue();
 
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            }
 
         }else{
             mListener.getGameData().setCountHowManyQuestionCompleted(count_question_completed);
