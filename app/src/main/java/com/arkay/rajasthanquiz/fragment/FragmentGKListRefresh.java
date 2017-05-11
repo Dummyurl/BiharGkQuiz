@@ -1,6 +1,5 @@
 package com.arkay.rajasthanquiz.fragment;
 
-import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,7 +57,7 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
     TextView txtAppTitle;
     Typeface tp;
     private int type;
-    ProgressDialog progress;
+    //ProgressDialog progress;
     public static final String NEWS_ID = "news_id";
     public static final String TYPE = "type";
 
@@ -211,12 +210,12 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
         offSet = offSet+1;
 
         String url="";
-        progress = new ProgressDialog(getActivity());
-        progress.setTitle("Please Wait!!");
-        progress.setMessage("Data Loading..");
-        progress.setCancelable(true);
-        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progress.show();
+//        progress = new ProgressDialog(getActivity());
+//        progress.setTitle("Please Wait!!");
+//        progress.setMessage("Data Loading..");
+//        progress.setCancelable(true);
+//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//        progress.show();
         Log.i(TAG," Off set after Refresh: "+offSet);
         // showing refresh animation before making http call
         swipeRefreshLayout.setRefreshing(true);
@@ -263,23 +262,14 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
                                     GKInfo m = new GKInfo(rank, title,desc,imagePostDate,postBy,lat,log,imageCredit,imgUrl);
                                     dataArrayList.add(m);
 
-                                    if(progress.isShowing()) {
-                                        progress.cancel();
-                                    }
                                 } catch (JSONException e) {
                                     Log.e(TAG, "JSON Parsing error: " + e.getMessage());
-                                    if(progress.isShowing()) {
-                                        progress.cancel();
-                                    }
                                 }
                             }
                             adapter.notifyDataSetChanged();
                         }else {
                             Toast.makeText(getActivity().getApplicationContext(), "There are no any data",
                                     Toast.LENGTH_SHORT).show();
-                            if(progress.isShowing()) {
-                                progress.cancel();
-                            }
                         }
                         if(adapter!=null) {
                             adapter.notifyDataSetChanged();
@@ -293,9 +283,7 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Server Error: " + error.getMessage());
-                if(progress.isShowing()) {
-                    progress.cancel();
-                }
+
 
                 // stopping swipe refresh
                 swipeRefreshLayout.setRefreshing(false);

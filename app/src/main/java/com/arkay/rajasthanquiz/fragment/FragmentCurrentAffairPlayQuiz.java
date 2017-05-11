@@ -728,14 +728,14 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         // appending offset to url
        // String url = getResources().getString(R.string.get_current_affiar_question_from_web) + levelNo;
 
-        Log.i(TAG, "New URL: " + url);
+      //  Log.i(TAG, "New URL: " + url);
 
         // Volley's json array request object
         final JsonArrayRequest req = new JsonArrayRequest(url,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Log.d(TAG, response.toString());
+                       // Log.d(TAG, response.toString());
 
                         if (response.length() > 0) {
 

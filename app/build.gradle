@@ -40,6 +40,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:9.0.1'
     compile 'com.google.android.gms:play-services-analytics:9.0.1'
 
+    compile 'com.google.firebase:firebase-messaging:9.0.1'
     compile "com.google.firebase:firebase-ads:9.0.1"
 
     compile files('libs/InMobi-6.2.1.jar')
