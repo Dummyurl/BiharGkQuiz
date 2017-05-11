@@ -137,7 +137,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
         // TODO Auto-generated method stub
-        Log.i("Database Upgrade Call: ","Old Version: "+oldVersion +" : New Version: "+newVersion);
+       // Log.i("Database Upgrade Call: ","Old Version: "+oldVersion +" : New Version: "+newVersion);
 
 
         String sql = "ALTER TABLE " + CURRENT_AFFAIR_LEVEL_TAB + " ADD COLUMN " +

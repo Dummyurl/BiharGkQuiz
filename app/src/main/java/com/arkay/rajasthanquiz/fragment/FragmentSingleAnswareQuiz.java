@@ -23,10 +23,12 @@ import android.widget.TextView;
 
 import com.arkay.rajasthanquiz.R;
 import com.arkay.rajasthanquiz.activity.MainActivity;
+import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.PlayQuizQuestion;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.inmobi.ads.InMobiAdRequestStatus;
 import com.inmobi.ads.InMobiInterstitial;
@@ -73,6 +75,7 @@ public class FragmentSingleAnswareQuiz extends Fragment
     private Tracker mTracker;
 
     InMobiInterstitial interstitial;
+
 
     public static FragmentSingleAnswareQuiz newInstance(Bundle bundle) {
         FragmentSingleAnswareQuiz fragment = new FragmentSingleAnswareQuiz();
@@ -129,7 +132,9 @@ public class FragmentSingleAnswareQuiz extends Fragment
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, "Gk in Hindi Single Answer");
+        mTracker.setScreenName("Rajasthan Quiz Single Answare Play Quiz");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        //Log.i(TAG, "Gk in Hindi Single Answer");
     }
 
 
@@ -171,7 +176,13 @@ public class FragmentSingleAnswareQuiz extends Fragment
 
         txtAnsware.setTypeface(tpHindi);
         txtQuestion.setTypeface(tpHindi);
+
+        // Obtain the shared Tracker instance.
+        MainApplication application = (MainApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
     }
+
+
 
     private void setQuestionList() {
         Bundle bundle = getArguments();

@@ -43,6 +43,8 @@ import com.arkay.rajasthanquiz.handler.DatabaseHelper;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.ConnectionDetector;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.inmobi.sdk.InMobiSdk;
 
 import java.io.File;
@@ -63,7 +65,6 @@ public class MainActivity extends AppCompatActivity
         FragmentGkInDetail.Listener{
 
     ArrayList<CurrentAffairQuestion> playQuizCAQuestionsScoreBoard;
-//    PlayQuizFragment playQuizFragment;
     GameOverFragment quizCompletedFragment;
     LetsLearnLevelFragment letsLearnActivity;
     CategoryScreenFragment categoryScreenActivity;
@@ -117,9 +118,6 @@ public class MainActivity extends AppCompatActivity
     public static final String IS_LAST_LEVEL_CATEGORY_PLAY = "is_last_level_category_play";
 
 
-    public static final String VERY_CURIOUS_UNLOCK="is_very_curious_unlocked";
-
-    public static final String ALL_CATEGORY_SCORE="all_category_score";
     public static final String LAST_LEVE_TRUE_ANS="last_level_true_question";
     public static final String LAST_LEVE_FALSE_ANS="last_level_false_question";
     public static final String IS_LETS_LEARN_LEVEL_PLAY = "is_lets_learn_level_play";
@@ -131,6 +129,7 @@ public class MainActivity extends AppCompatActivity
     private FragmentCurrentAffairCompleted mfragmentCurrentAffairCompleted;
     SharedPreferences settings;
     private FragmentFourOptionPlayQuiz fragmentFourOptionPlayQuiz;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,7 +139,8 @@ public class MainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        InMobiSdk.init(this, "7459daf7a94f4731830f0a8af80e7112"); //'this' is used specify context
+        //InMobiSdk.init(this, "7459daf7a94f4731830f0a8af80e7112"); //'this' is used specify context
+        InMobiSdk.init(this, "80bce36c226f4e9fbec83d381ed4c8bd"); //'this' is used specify context
 
         checkDB();
 
@@ -189,6 +189,19 @@ public class MainActivity extends AppCompatActivity
         }else{
             userLevel = Constants.ALL_ROUNDER;
         }
+
+        // Obtain the shared Tracker instance.
+        MainApplication application = (MainApplication) getApplication();
+        mTracker = application.getDefaultTracker();
+
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Rajasthan Quiz Home Screen");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
     }
 
 

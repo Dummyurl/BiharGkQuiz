@@ -1,5 +1,6 @@
 package com.arkay.rajasthanquiz.fragment;
 
+import android.app.ProgressDialog;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +27,8 @@ import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.GKInfo;
 import com.arkay.rajasthanquiz.customviews.SwipeRefreshLayoutBottom;
 import com.arkay.rajasthanquiz.util.ConnectionDetector;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -54,11 +57,12 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
     AdapterView.OnItemClickListener listClickListener;
     TextView txtAppTitle;
     Typeface tp;
-    //private ProgressDialog progress;
     private int type;
-
+    ProgressDialog progress;
     public static final String NEWS_ID = "news_id";
     public static final String TYPE = "type";
+
+    private Tracker mTracker;
 
     public interface Listener {
         public void setGKDetailScreen(Bundle bundle,int id,int type);
@@ -77,6 +81,9 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        // Obtain the shared Tracker instance.
+        MainApplication application = (MainApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
@@ -165,6 +172,13 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
         return v;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTracker.setScreenName("Rajasthan Quiz GK News");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
     /**
      * This method is called when swipe refresh is pulled down
      */
@@ -197,12 +211,12 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
         offSet = offSet+1;
 
         String url="";
-//        progress = new ProgressDialog(getActivity());
-//        progress.setTitle("Please Wait!!");
-//        progress.setMessage("Data Loading..");
-//        progress.setCancelable(true);
-//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//        progress.show();
+        progress = new ProgressDialog(getActivity());
+        progress.setTitle("Please Wait!!");
+        progress.setMessage("Data Loading..");
+        progress.setCancelable(true);
+        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progress.show();
         Log.i(TAG," Off set after Refresh: "+offSet);
         // showing refresh animation before making http call
         swipeRefreshLayout.setRefreshing(true);
@@ -249,17 +263,23 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
                                     GKInfo m = new GKInfo(rank, title,desc,imagePostDate,postBy,lat,log,imageCredit,imgUrl);
                                     dataArrayList.add(m);
 
-//                                    if(progress.isShowing()) {
-//                                        progress.cancel();
-//                                    }
+                                    if(progress.isShowing()) {
+                                        progress.cancel();
+                                    }
                                 } catch (JSONException e) {
                                     Log.e(TAG, "JSON Parsing error: " + e.getMessage());
+                                    if(progress.isShowing()) {
+                                        progress.cancel();
+                                    }
                                 }
                             }
                             adapter.notifyDataSetChanged();
                         }else {
                             Toast.makeText(getActivity().getApplicationContext(), "There are no any data",
                                     Toast.LENGTH_SHORT).show();
+                            if(progress.isShowing()) {
+                                progress.cancel();
+                            }
                         }
                         if(adapter!=null) {
                             adapter.notifyDataSetChanged();
@@ -273,7 +293,9 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "Server Error: " + error.getMessage());
-
+                if(progress.isShowing()) {
+                    progress.cancel();
+                }
 
                 // stopping swipe refresh
                 swipeRefreshLayout.setRefreshing(false);

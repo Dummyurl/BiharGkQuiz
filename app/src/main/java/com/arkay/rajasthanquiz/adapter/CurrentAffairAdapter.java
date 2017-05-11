@@ -20,7 +20,7 @@ import java.util.List;
 public class CurrentAffairAdapter extends BaseAdapter {
     private Activity activity;
     private List<CurrentAffairLevel> currentAffairs;
-    Typeface tp,tpHindi;
+    Typeface tp;
     private ImageView imgStatus;
     private TextView txtNumber,txtLevelName,txtNoOfQue;
 
@@ -59,8 +59,8 @@ public class CurrentAffairAdapter extends BaseAdapter {
 
         tp = Typeface.createFromAsset(activity.getAssets(),
                 "MarkoOne-Regular.ttf");
-        tpHindi = Typeface.createFromAsset(activity.getAssets(),
-                "olivier_demo.ttf");
+//        tpHindi = Typeface.createFromAsset(activity.getAssets(),
+//                "olivier_demo.ttf");
 
 
 
@@ -88,7 +88,7 @@ public class CurrentAffairAdapter extends BaseAdapter {
         }
 
         txtNumber.setTypeface(tp);
-        txtLevelName.setTypeface(tpHindi);
+        //txtLevelName.setTypeface(tpHindi);
         txtNoOfQue.setTypeface(tp);
 
         return v;

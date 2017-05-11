@@ -31,12 +31,15 @@ import android.widget.Toast;
 
 import com.arkay.rajasthanquiz.R;
 import com.arkay.rajasthanquiz.activity.MainActivity;
+import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.GameData;
 import com.arkay.rajasthanquiz.beans.PlayQuizLevel;
 import com.arkay.rajasthanquiz.facebook.AsyncFacebookRunner;
 import com.arkay.rajasthanquiz.facebook.Facebook;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.inmobi.ads.InMobiAdRequestStatus;
 import com.inmobi.ads.InMobiInterstitial;
 
@@ -89,15 +92,17 @@ public class FragmentFourOptionPlayQuiz extends Fragment
 
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
-    Typeface tp,tpHindi;
+    Typeface tp;
 
     InMobiInterstitial interstitial;
+    private Tracker mTracker;
 
     public interface Listener {
         public void displyHomeScreen();
         public GameData getGameData();
         public FragmentQuizCompleted getFragmentQuizCompleted();
         int getUserLevel();
+
     }
     Listener mListener = null;
 
@@ -151,20 +156,27 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         });
         interstitial.load();
 
+
+        // Obtain the shared Tracker instance.
+        MainApplication application = (MainApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
+
+
     }
 
     @Override
     public void onResume() {
         super.onResume();
-
+        mTracker.setScreenName("Rajasthan Quiz Four Option Play Quiz");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         Log.i(TAG, ""+ TAG +" Four Option Play Quiz");
     }
     private void setViews(View view)
     {
         tp = Typeface.createFromAsset(getActivity().getAssets(),
                 "MarkoOne-Regular.ttf");
-        tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
-                "olivier_demo.ttf");
+//        tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
+//                "olivier_demo.ttf");
         btnOpt1 =  (TextView) view.findViewById(R.id.txtOption1);
         btnOpt1.setOnClickListener(this);
         btnOpt2 =  (TextView) view.findViewById(R.id.txtOption2);
@@ -205,15 +217,15 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         txtScore.setTypeface(tp);
         txtFalse.setTypeface(tp);
         txtOutOfQue.setTypeface(tp);
-        txtQuestion.setTypeface(tpHindi);
+//        txtQuestion.setTypeface(tpHindi);
         optionA.setTypeface(tp);
         optionB.setTypeface(tp);
         optionC.setTypeface(tp);
         optionD.setTypeface(tp);
-        txtOption1.setTypeface(tpHindi);
-        txtOption2.setTypeface(tpHindi);
-        txtOption3.setTypeface(tpHindi);
-        txtOption4.setTypeface(tpHindi);
+//        txtOption1.setTypeface(tpHindi);
+//        txtOption2.setTypeface(tpHindi);
+//        txtOption3.setTypeface(tpHindi);
+//        txtOption4.setTypeface(tpHindi);
 
         txtOption1.setOnClickListener(this);
         txtOption2.setOnClickListener(this);

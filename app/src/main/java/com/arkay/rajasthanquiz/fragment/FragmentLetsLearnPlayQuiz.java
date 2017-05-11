@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import com.arkay.rajasthanquiz.R;
 import com.arkay.rajasthanquiz.activity.MainActivity;
+import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.CurrentAffairQuestion;
 import com.arkay.rajasthanquiz.beans.GameData;
 import com.arkay.rajasthanquiz.beans.LetLeranScore;
@@ -39,6 +40,8 @@ import com.arkay.rajasthanquiz.facebook.AsyncFacebookRunner;
 import com.arkay.rajasthanquiz.facebook.Facebook;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,11 +84,13 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
     RelativeLayout relative1,relative2,relative3,relative4;
 
     TextView scoretxt,txtScore,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
-    Typeface tp,tpHindi;
+    Typeface tp;
 
 
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
+
+    private Tracker mTracker;
 
     public interface Listener {
         public GameData getGameData();
@@ -121,13 +126,19 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
         setAnimation();
         setViews(view);
         setFacebookLoginCredential();
+
+        // Obtain the shared Tracker instance.
+        MainApplication application = (MainApplication) getActivity().getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
     public void onResume() {
         super.onResume();
 
-        Log.i(TAG, ""+ TAG +" Four Option Play Quiz");
+        mTracker.setScreenName("Rajasthan Quiz Lets Learn");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
     }
     private void setViews(View view)
     {
@@ -163,15 +174,15 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
         txtScore.setTypeface(tp);
         txtFalseQuestion.setTypeface(tp);
         txtOutOfQue.setTypeface(tp);
-        txtQuestion.setTypeface(tpHindi);
+        //txtQuestion.setTypeface(tpHindi);
         optionA.setTypeface(tp);
         optionB.setTypeface(tp);
         optionC.setTypeface(tp);
         optionD.setTypeface(tp);
-        txtOption1.setTypeface(tpHindi);
-        txtOption2.setTypeface(tpHindi);
-        txtOption3.setTypeface(tpHindi);
-        txtOption4.setTypeface(tpHindi);
+//        txtOption1.setTypeface(tpHindi);
+//        txtOption2.setTypeface(tpHindi);
+//        txtOption3.setTypeface(tpHindi);
+//        txtOption4.setTypeface(tpHindi);
 
         txtOption1.setOnClickListener(this);
         txtOption2.setOnClickListener(this);

@@ -46,6 +46,10 @@ import com.arkay.rajasthanquiz.handler.CurrentAffairQuestionsDAO;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.ConnectionDetector;
 import com.arkay.rajasthanquiz.util.Constants;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -88,10 +92,13 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
 
     ImageButton btnBookmark;
     RelativeLayout relative1,relative2,relative3,relative4;
-    Typeface tp,tpHindi;
+    Typeface tp;
 
 
     private ProgressDialog progress;
+
+    InterstitialAd mInterstitialAd;
+
 
     View view;
 
@@ -103,6 +110,7 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
     //public static String              APP_ID       = "262317043858138";
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
+    private Tracker mTracker;
 
     public interface Listener {
         public GameData getGameData();
@@ -123,6 +131,30 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
     {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_play_quiz, container, false);
+
+    }
+
+    private void requestNewInterstitial() {
+
+        AdRequest adRequest;
+        if(getResources().getBoolean(R.bool.isTestMode)){
+            adRequest = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .addTestDevice("0C2DF43E6E70766851B6A3E5EE46A9B8")
+                    .addTestDevice("E10CFA7B6C484AD18A1356C3E659CC09")
+                    .addTestDevice("54BDDE3D2B6D19827B248558A4971B35")
+                    .addTestDevice("AFE866BB9099AEDD026BF576D2EB4889")
+                    .addTestDevice("B81C8CF2B009D919B43B69D0FEC57EE2")
+                    .addTestDevice("B81C8CF2B009D919B43B69D0FEC57EE2")
+                    .addTestDevice("D4F9CC518EADF120DDA2EFF49390C315")
+
+                    .build();
+
+        }else{
+            adRequest = new AdRequest.Builder().build();
+        }
+
+        mInterstitialAd.loadAd(adRequest);
     }
 
 
@@ -139,8 +171,8 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
 
         tp = Typeface.createFromAsset(getActivity().getAssets(),
                 "MarkoOne-Regular.ttf");
-        tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
-                "olivier_demo.ttf");
+//        tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
+//                "olivier_demo.ttf");
         setAnimation();
 
         Bundle bundle = getArguments();
@@ -197,14 +229,21 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         animationFromRight.setAnimationListener(listener);
 
 
+        mTracker = application.getDefaultTracker();
 
 
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.admob_app_unit_id));
+
+        requestNewInterstitial();
     }
 
 
     @Override
     public void onResume() {
         super.onResume();
+        mTracker.setScreenName("Rajasthan Quiz Current Affair Play Quiz");
+        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
         Log.i(TAG, ""+ TAG +" Current Affiar Play Quiz");
     }
     private void setViews(View view)
@@ -242,15 +281,15 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         txtScore.setTypeface(tp);
         txtFalse.setTypeface(tp);
         txtOutOfQue.setTypeface(tp);
-        txtQuestion.setTypeface(tpHindi);
+    //    txtQuestion.setTypeface(tpHindi);
         optionA.setTypeface(tp);
         optionB.setTypeface(tp);
         optionC.setTypeface(tp);
         optionD.setTypeface(tp);
-        txtOption1.setTypeface(tpHindi);
-        txtOption2.setTypeface(tpHindi);
-        txtOption3.setTypeface(tpHindi);
-        txtOption4.setTypeface(tpHindi);
+//        txtOption1.setTypeface(tpHindi);
+//        txtOption2.setTypeface(tpHindi);
+//        txtOption3.setTypeface(tpHindi);
+//        txtOption4.setTypeface(tpHindi);
 
         relative1.setOnClickListener(this);
         relative2.setOnClickListener(this);
@@ -450,6 +489,10 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
             getActivity().getSupportFragmentManager().popBackStack();
             getActivity().getSupportFragmentManager().beginTransaction().replace( R.id.ha_flContentContainer1, mListener.getQuizFragmentScoreBoard() ).addToBackStack( "tag" ).commit();
             blankAllValue();
+
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
+            }
         }else{
 
             txtOption1.setTextColor(Color.parseColor("#212121"));

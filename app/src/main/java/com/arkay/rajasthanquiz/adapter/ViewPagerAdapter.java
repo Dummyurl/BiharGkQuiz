@@ -31,7 +31,7 @@ public class ViewPagerAdapter extends PagerAdapter
     ImageView imgflag;
     TextView lblStoryDetail;
     public TextView txtStoryTitle;
-    private TextView lblPublish;
+    private TextView lblPublish, lblcredit;
     long startDate;
     private static final int SECOND_MILLIS = 1000;
     private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
@@ -72,11 +72,13 @@ public class ViewPagerAdapter extends PagerAdapter
         lblStoryDetail = (TextView) itemView.findViewById(R.id.lblStoryDetail);
         txtStoryTitle = (TextView) itemView.findViewById(R.id.txtStoryTitle);
         lblPublish = (TextView) itemView.findViewById(R.id.lblPublish);
+        lblcredit = (TextView) itemView.findViewById(R.id.lblcredit);
 
         lblStoryDetail.setText(gkInfoDetails.get(position).getDesc());
 
         txtStoryTitle.setText(gkInfoDetails.get(position).getTitle());
         lblPublish.setText(gkInfoDetails.get(position).getDate());
+        lblcredit.setText("Credit: "+gkInfoDetails.get(position).getImgcredit());
         imgflag = (ImageView) itemView.findViewById(R.id.flag);
 
         // Capture position and set to the ImageView

@@ -4,7 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.PlayQuizLevel;
@@ -43,7 +42,7 @@ public class QuestionsDAO {
         int start = quizLeve * 20;
         //int end = start + 10;
         String sql = "SELECT * FROM "+DatabaseHelper.QUESTION_TAB +"  LIMIT 10 OFFSET "+start;
-        Log.i("GK in Gujarati", ""+sql);
+        //Log.i("GK in Gujarati", ""+sql);
         SQLiteDatabase db = databaseHalper.getWritableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
         //int i=1;

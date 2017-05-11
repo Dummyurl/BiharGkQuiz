@@ -205,7 +205,7 @@ public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayou
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Log.d(TAG, response.toString());
+                       // Log.d(TAG, response.toString());
 
                         if (response.length() > 0) {
 

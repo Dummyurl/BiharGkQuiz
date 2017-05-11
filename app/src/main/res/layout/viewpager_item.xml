@@ -155,15 +155,36 @@
                     android:layout_width="match_parent"
                     android:layout_below="@+id/rel1"
                     android:layout_height="match_parent">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginTop="@dimen/option_button_padding"
-                    android:id="@+id/lblStoryDetail"
-                    android:scrollbars="none"
-                    android:textSize="@dimen/text_15sp"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/next_prev_left_right_margin"
-                    />
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/option_button_padding"
+                            android:id="@+id/lblStoryDetail"
+                            android:scrollbars="none"
+                            android:textSize="@dimen/text_15sp"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/next_prev_left_right_margin"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="@dimen/option_button_padding"
+                            android:id="@+id/lblcredit"
+                            android:scrollbars="none"
+                            android:textColor="@color/txtCreditColor"
+                            android:text="Credit: "
+                            android:textSize="@dimen/text_15sp"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/next_prev_left_right_margin"
+                            />
+                    </LinearLayout>
+
+
                 </ScrollView>
 
                 <!--<com.arkay.newsapp.customviews.AutoResizeTextView-->

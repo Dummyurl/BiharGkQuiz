@@ -202,6 +202,11 @@
     <string name="str_btn11">प्रचलित नगर</string>
     <string name="str_btn12">राजनीति</string>
 
+
+    <string name="admob_app_id">ca-app-pub-1891613648627380~5865362555</string>
+    <string name="admob_app_unit_id">ca-app-pub-1891613648627380/9876759758</string>
+    <bool name="isTestMode">false</bool>
+
     <string-array name="serial_level">
         <item>pink_rect</item>
         <item>green_rect</item>

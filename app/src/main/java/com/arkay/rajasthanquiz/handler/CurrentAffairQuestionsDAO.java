@@ -4,8 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-
 
 import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.CurrentAffairLevel;
@@ -104,7 +102,7 @@ public class CurrentAffairQuestionsDAO {
         ArrayList<CurrentAffairLevel> tempCurrentAffairLevels = new ArrayList<CurrentAffairLevel>();
 
         String sql = "SELECT * FROM " + DatabaseHelper.CURRENT_AFFAIR_LEVEL_TAB +" order by "+DatabaseHelper.CURRENT_AFFAIR_LEVEL_ID+" desc";
-        Log.i("Gkin Gujarati",sql);
+       // Log.i("Gkin Gujarati",sql);
         SQLiteDatabase db = databaseHalper.getReadableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.moveToFirst()){
@@ -175,7 +173,7 @@ public class CurrentAffairQuestionsDAO {
         }
         cursor.close();
         db.close();
-        Log.i("Play: ",""+count);
+       // Log.i("Play: ",""+count);
        // return count;
     }
 
