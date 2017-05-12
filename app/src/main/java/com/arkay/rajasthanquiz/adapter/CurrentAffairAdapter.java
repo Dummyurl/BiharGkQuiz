@@ -59,10 +59,6 @@ public class CurrentAffairAdapter extends BaseAdapter {
 
         tp = Typeface.createFromAsset(activity.getAssets(),
                 "MarkoOne-Regular.ttf");
-//        tpHindi = Typeface.createFromAsset(activity.getAssets(),
-//                "olivier_demo.ttf");
-
-
 
         imgStatus = (ImageView)v.findViewById(R.id.imgStatus);
         txtNumber = (TextView) v.findViewById(R.id.txtNumber);

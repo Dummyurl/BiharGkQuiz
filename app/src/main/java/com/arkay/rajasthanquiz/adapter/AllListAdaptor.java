@@ -26,17 +26,16 @@ public class AllListAdaptor extends BaseAdapter {
     private static ArrayList<LearnListData> learnListDatas;
     private LayoutInflater inflater = null;
     private TextView txtName, txtSerial,txtNoOfQue;
-    private String[] bgColors;
     private int lastPosition = -1;
     private ImageView imgStatus;
-    DonutProgress timer_progress;
-    Typeface tp,tpHindi;
+    private DonutProgress timer_progress;
+    private Typeface tpHindi;
 
     public AllListAdaptor(Activity a, ArrayList<LearnListData> learnListDatas) {
         activity = a;
         this.learnListDatas=learnListDatas;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        bgColors = activity.getApplicationContext().getResources().getStringArray(R.array.app_serial_bg);
+       // bgColors = activity.getApplicationContext().getResources().getStringArray(R.array.app_serial_bg);
 
     }
 
@@ -59,8 +58,6 @@ public class AllListAdaptor extends BaseAdapter {
             vi = inflater.inflate(R.layout.item_level, null);
         }
 
-        tp = Typeface.createFromAsset(activity.getAssets(),
-                "MarkoOne-Regular.ttf");
         tpHindi = Typeface.createFromAsset(activity.getAssets(),
                 "olivier_demo.ttf");
         imgStatus = (ImageView)vi.findViewById(R.id.imgStatus);

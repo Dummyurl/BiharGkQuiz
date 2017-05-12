@@ -64,32 +64,30 @@ public class MainActivity extends AppCompatActivity
         FragmentQuizCompleted.Listener,FragmentCurrentAffairCompleted.Listener,FragmentScoreBoard.Listener,
         FragmentGkInDetail.Listener{
 
-    ArrayList<CurrentAffairQuestion> playQuizCAQuestionsScoreBoard;
-    GameOverFragment quizCompletedFragment;
-    LetsLearnLevelFragment letsLearnActivity;
-    CategoryScreenFragment categoryScreenActivity;
-    HomeFragment homeFragment;
-    CurrentAffairFragment currentAffairActivity;
-    PlaceMapFragment projectMapFragment;
+    private ArrayList<CurrentAffairQuestion> playQuizCAQuestionsScoreBoard;
+    private GameOverFragment quizCompletedFragment;
+    private LetsLearnLevelFragment letsLearnActivity;
+    private CategoryScreenFragment categoryScreenActivity;
+    private HomeFragment homeFragment;
+    private CurrentAffairFragment currentAffairActivity;
     private FragmentCurrentAffairPlayQuiz mFragmentCurrentAffairPlayQuiz;
-    FragmentGKListRefresh gkActivity;
+    private FragmentGKListRefresh gkActivity;
     private FragmentLetsLearnPlayQuiz mFragmentLetsLearnPlayQuiz;
-    FragmentSingleAnswareQuiz fragmentSingleAnswareQuiz;
-    HomeFragment mFragementHomeScreen;
+    private HomeFragment mFragementHomeScreen;
     private FragmentSingleAnswareQuiz mFragmentSingleAnswareQuiz;
     private FragmentWebsiteView mFragmentWebsiteView;
-    public static String isWhichType = "isWhichType";
-    public static String LEVEL_NO = "level_no";
     private GameData gameData;
-    FragmentScoreBoard mQuizFragmentScoreBoard;
+    private FragmentScoreBoard mQuizFragmentScoreBoard;
     private FragmentQuizCompleted fragmentQuizCompleted;
     private FragmentAboutApp mFragmentTermsOfUse;
 
     public static final String TOKEN = "token";
 
     public static final String TOTAL_SCORE = "total_score";
-    public static final String LEVEL ="level";
     public static final String TAG = MainApplication.class.getSimpleName();
+
+
+
 
     //Achivement
     public static final String LEVEL_COMPLETED = "level_completed";
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity
     //Achevement data for Current Affair
     public static final String CURRENT_AFAIR_TOTAL_SCORE = "current_affair_totalScore";
     public static final String CURRENT_AFAIR_LEVEL_COMPLETED="current_affair_levelCompleted";
-    public static final String IS_LAST_PLAY_GAME_CURRENT_AFFAIR = "last_play_game";
     public static final String LET_LERAN_LAST_LEVEL_COMPLETED = "let_learn_last_level_complete";
 
 
@@ -141,7 +138,6 @@ public class MainActivity extends AppCompatActivity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        //InMobiSdk.init(this, "7459daf7a94f4731830f0a8af80e7112"); //'this' is used specify context
         InMobiSdk.init(this, "80bce36c226f4e9fbec83d381ed4c8bd"); //'this' is used specify context
 
         checkDB();
@@ -197,32 +193,6 @@ public class MainActivity extends AppCompatActivity
         mTracker = application.getDefaultTracker();
 
 
-//        if (getIntent() != null) {
-//            if(getIntent().getExtras()!=null) {
-//                String msg_type = getIntent().getExtras().getString("MSG_TYPE");
-//                switch (msg_type) {
-//                    case CURRENT_AFFAIR:
-//                        String levelNo = getIntent().getExtras().getString("ID");
-//                        playCurrentAffairQuiz(Integer.parseInt(levelNo));
-//                        break;
-//                }
-//            }
-//        }
-
-//        if(getIntent()!=null){
-//            if(getIntent().getExtras()!=null){
-//                boolean is_from_push = getIntent().getExtras().getBoolean("FROM_PUSH");
-//                if(is_from_push){
-//                    String msg_type = getIntent().getExtras().getString("MSG_TYPE");
-//                    switch (msg_type) {
-//                        case CURRENT_AFFAIR:
-//                            String levelNo = getIntent().getExtras().getString("ID");
-//                            playCurrentAffairQuiz(Integer.parseInt(levelNo));
-//                            break;
-//                    }
-//                }
-//            }
-//        }
     }
     @Override
     protected void onResume() {

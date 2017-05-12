@@ -19,7 +19,6 @@ import com.android.volley.toolbox.Volley;
 import com.arkay.rajasthanquiz.R;
 import com.arkay.rajasthanquiz.adapter.ViewPagerAdapter;
 import com.arkay.rajasthanquiz.beans.GkInfoDetail;
-import com.arkay.rajasthanquiz.util.ConnectionDetector;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -35,16 +34,12 @@ import java.util.Map;
  */
 public class FragmentGkInDetail extends Fragment {
 
-    private View v;
-    ViewPager viewPagerBanner;
-    ViewPagerAdapter adapter;
-    ConnectionDetector conn;
-   // NewsData newsData;
-    int news_id;
-    int type;
-    String r;
-    int id1 = 0;
-    ArrayList<String> myListBack;
+    private ViewPager viewPagerBanner;
+    private ViewPagerAdapter adapter;
+    private int news_id;
+    private int type;
+    private String r;
+    private ArrayList<String> myListBack;
     private ArrayList<GkInfoDetail> recentNewses;
     private FloatingActionButton btnNext;
     private ImageButton imgLocation;

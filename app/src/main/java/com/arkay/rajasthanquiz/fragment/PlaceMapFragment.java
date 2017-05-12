@@ -33,10 +33,10 @@ import com.google.android.gms.maps.model.TileProvider;
 public class PlaceMapFragment extends Fragment implements OnMapReadyCallback {
     private View view;
     private GoogleMap map;
-    String destLati, destLongi,title;
+    private String destLati, destLongi,title;
     private Button btnNavigate;
     private int STORAGE_PERMISSION_CODE = 23;
-    Listener mListener = null;
+    private Listener mListener = null;
 
     public PlaceMapFragment() {
         // Required empty public constructor

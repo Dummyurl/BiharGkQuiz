@@ -73,20 +73,18 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
 
     private SharedPreferences settings;
     private Animation animation;
-    Animation animationFromRight,animationFromLeft;
+    private Animation animationFromRight,animationFromLeft, in, out;
     private MediaPlayer rightAnsware, wrongeAnsware;
     private SharedPreferences.Editor editor;
-    Animation in;
-    Animation out;
-    ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
+    private ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
 
     View view;
 
     int letsLeanLevelID = 0;
-    RelativeLayout relative1,relative2,relative3,relative4;
+    private RelativeLayout relative1,relative2,relative3,relative4;
 
-    TextView scoretxt,txtScore,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
-    Typeface tp;
+    private TextView txtScore,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
+    private Typeface tp;
 
 
     InterstitialAd mInterstitialAd;
@@ -206,15 +204,10 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
         txtScore.setTypeface(tp);
         txtFalseQuestion.setTypeface(tp);
         txtOutOfQue.setTypeface(tp);
-        //txtQuestion.setTypeface(tpHindi);
         optionA.setTypeface(tp);
         optionB.setTypeface(tp);
         optionC.setTypeface(tp);
         optionD.setTypeface(tp);
-//        txtOption1.setTypeface(tpHindi);
-//        txtOption2.setTypeface(tpHindi);
-//        txtOption3.setTypeface(tpHindi);
-//        txtOption4.setTypeface(tpHindi);
 
         txtOption1.setOnClickListener(this);
         txtOption2.setOnClickListener(this);
@@ -362,10 +355,6 @@ public class FragmentLetsLearnPlayQuiz extends Fragment
     public void onClick(View v)
     {
         if(quextionIndex<level.getNoOfQuestion()){
-//            relative1.setClickable(false);
-//            relative2.setClickable(false);
-//            relative3.setClickable(false);
-//            relative4.setClickable(false);
 
             switch(v.getId()){
                 case R.id.relative1:

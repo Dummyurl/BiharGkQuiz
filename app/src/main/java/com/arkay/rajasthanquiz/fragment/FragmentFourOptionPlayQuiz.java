@@ -66,35 +66,30 @@ public class FragmentFourOptionPlayQuiz extends Fragment
     private int correctQuestion=0;
     private int inCorrectQuestion=0;
 
-    private TextView btnOpt2, btnOpt3, btnOpt4;
-    private TextView btnOpt1;
+    private TextView btnOpt1, btnOpt2, btnOpt3, btnOpt4;
     private TextView quizQuestion,txtTrueQuestion, txtFalseQuestion;;
-    TextView txtTrue,scoretxt,txtScore,txtFalse,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
+    private TextView txtTrue,txtScore,txtFalse,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
+    private RelativeLayout relative1,relative2,relative3,relative4;
+    private ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
 
     private SharedPreferences settings;
-    boolean isSoundOn=false;
-    private Animation animation;
-    Animation animationFromRight,animationFromLeft;
+    private Animation animationFromRight,animationFromLeft, animation, in, out;
     private MediaPlayer rightAnsware, wrongeAnsware;
     private final Handler mHandler = new Handler();
     private SharedPreferences.Editor editor;
-    Animation in;
-    Animation out;
 
-    View view;
-    ImageButton btnAddToFavourite;
+    private View view;
+    private ImageButton btnAddToFavourite;
 
-    boolean isCategoryPlayQuiz =false;
-    int categoryID = 0;
-    RelativeLayout relative1,relative2,relative3,relative4;
-    ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
+    private boolean isCategoryPlayQuiz =false;
+    private int categoryID = 0;
 
 
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
-    Typeface tp;
+    private Typeface tp;
 
-    InMobiInterstitial interstitial;
+    private InMobiInterstitial interstitial;
     private Tracker mTracker;
 
     public interface Listener {
@@ -175,8 +170,6 @@ public class FragmentFourOptionPlayQuiz extends Fragment
     {
         tp = Typeface.createFromAsset(getActivity().getAssets(),
                 "MarkoOne-Regular.ttf");
-//        tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
-//                "olivier_demo.ttf");
         btnOpt1 =  (TextView) view.findViewById(R.id.txtOption1);
         btnOpt1.setOnClickListener(this);
         btnOpt2 =  (TextView) view.findViewById(R.id.txtOption2);
@@ -217,15 +210,10 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         txtScore.setTypeface(tp);
         txtFalse.setTypeface(tp);
         txtOutOfQue.setTypeface(tp);
-//        txtQuestion.setTypeface(tpHindi);
         optionA.setTypeface(tp);
         optionB.setTypeface(tp);
         optionC.setTypeface(tp);
         optionD.setTypeface(tp);
-//        txtOption1.setTypeface(tpHindi);
-//        txtOption2.setTypeface(tpHindi);
-//        txtOption3.setTypeface(tpHindi);
-//        txtOption4.setTypeface(tpHindi);
 
         txtOption1.setOnClickListener(this);
         txtOption2.setOnClickListener(this);
@@ -238,7 +226,7 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         relative2.setOnClickListener(this);
         relative3.setOnClickListener(this);
         relative4.setOnClickListener(this);
-        //btnBookmark.setOnClickListener(this);
+
         relative1 = (RelativeLayout) view.findViewById(R.id.relative1);
         relative2 = (RelativeLayout) view.findViewById(R.id.relative2);
         relative3 = (RelativeLayout) view.findViewById(R.id.relative3);
@@ -287,9 +275,6 @@ public class FragmentFourOptionPlayQuiz extends Fragment
 
         resetAllValue();
         nextQuizQuestion();
-
-
-
 
         Animation.AnimationListener listener = new Animation.AnimationListener() {
 
@@ -747,21 +732,5 @@ public class FragmentFourOptionPlayQuiz extends Fragment
         return sp.getBoolean("play_quiz_right_wrong_sound", true);
     }
 
-//    @Override
-//    public void onDestroy() {
-//        getFragmentManager().removeOnBackStackChangedListener(this);
-//        super.onDestroy();
-//    }
-
-//    @Override
-//    public void onDestroy() {
-//        getFragmentManager().removeOnBackStackChangedListener(this);
-//        super.onDestroy();
-//    }
-//
-//    public void onBackStackChanged(){
-//
-//       // getFragmentManager().popBackStack();
-//    }
 }
 

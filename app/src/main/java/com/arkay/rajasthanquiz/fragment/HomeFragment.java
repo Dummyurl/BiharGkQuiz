@@ -9,7 +9,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -25,14 +24,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     public static final String TAG = HomeFragment.class.getSimpleName();;
 
-    Animation growFromBottom;//, animZoomIn1, animZoomIn2, animZoomIn3, animZoomIn4, animZoomIn5, animZoomIn6;
-
     DrawerLayout drawer;
 
     TextView txtLetsLearn,txtGkNews,txtPlayQuiz,txtCurrentAffair,txtCategory,txtFamous,txtFamousPlace;
     ImageButton imgLetslearn,imgGk,imgDrawer,imgPlayQuiz,imgCurrent,imgCategory,imgFamousPlace,imgFamousPerson;
-
-    LetsLearnLevelFragment levelFragment;
     Typeface tp;
 
     public interface Listener {
@@ -131,9 +126,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.imgFamousPlace:
                 mListener.clickOnFamousPlace();
                 break;
+
             case R.id.imgFamousPerson:
                 mListener.clickOnFamousPerson();
                 break;
+
             default:
                 break;
         }

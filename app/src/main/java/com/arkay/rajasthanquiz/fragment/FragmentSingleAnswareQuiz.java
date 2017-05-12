@@ -27,7 +27,6 @@ import com.arkay.rajasthanquiz.application.MainApplication;
 import com.arkay.rajasthanquiz.beans.PlayQuizQuestion;
 import com.arkay.rajasthanquiz.handler.QuestionsDAO;
 import com.arkay.rajasthanquiz.util.Constants;
-import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.inmobi.ads.InMobiAdRequestStatus;
@@ -57,24 +56,15 @@ public class FragmentSingleAnswareQuiz extends Fragment
 
 
     public static boolean setSound = true;
-
-
-    //  private GestureDetector mGestureDetector;
     private boolean isBookMarkScreen = false;
     public int selectedQuestion = 0;
 
-    //public boolean isCategorySelect;
-
-    Animation in;
-    Animation out;
-
-    InterstitialAd mInterstitialAd;
-
-    List<PlayQuizQuestion> questionsList;
-
-    private Tracker mTracker;
+    private Animation in, out;
 
     InMobiInterstitial interstitial;
+    private Tracker mTracker;
+
+    List<PlayQuizQuestion> questionsList;
 
 
     public static FragmentSingleAnswareQuiz newInstance(Bundle bundle) {
@@ -148,7 +138,6 @@ public class FragmentSingleAnswareQuiz extends Fragment
 
         btnNext = (ImageButton) view.findViewById(R.id.btn_next);
         btnPrev = (ImageButton) view.findViewById(R.id.btn_prev);
-       // btnBackList = (ImageView) view.findViewById(R.id.btn_jump);
         btnBookmark = (ImageButton) view.findViewById(R.id.img_bookmark);
 
         btnshowanswer = (Button) view.findViewById(R.id.btnshowanswer);
@@ -166,7 +155,6 @@ public class FragmentSingleAnswareQuiz extends Fragment
         //	NextPrevButtonListener listener = new NextPrevButtonListener();
         btnNext.setOnClickListener(this);
         btnPrev.setOnClickListener(this);
-       // btnBackList.setOnClickListener(this);
         btnBookmark.setOnClickListener(this);
 
         Log.i(TAG,"IS Bookmark Screen: "+isBookMarkScreen);
@@ -187,15 +175,10 @@ public class FragmentSingleAnswareQuiz extends Fragment
     private void setQuestionList() {
         Bundle bundle = getArguments();
         QuestionsDAO questionDao = new QuestionsDAO(getActivity());
-        //ArrayList<PlayQuizQuestion> questions = new ArrayList<PlayQuizQuestion>();
         if(isBookMarkScreen){
-            //questions = questionDao.getTotalSingleAnswareBookmarkQuestions();
             questionsList = questionDao.getBookmarkQuestions();
         }else {
-            // isCategorySelect = bundle.getBoolean(Constants.IS_CATEGORY_SELECTE);
             int cateIndexORid = bundle.getInt(Constants.QUESTION_SELECT_INDEX_OR_CATEGORY_ID);
-
-            //Log.i(HomeActivity.TAG, "IS Category Select: " + isCategorySelect);
             Log.i(MainActivity.TAG, "IS Category ID: " + cateIndexORid);
 
         }
@@ -325,15 +308,7 @@ public class FragmentSingleAnswareQuiz extends Fragment
 
         }
 
-        if(selectedQuestion>=1) {
-            if (selectedQuestion % 20 == 0) {
-                Log.i(TAG, "Ads Going to display");
-                if (mInterstitialAd.isLoaded()) {
-                    Log.i(TAG, "Ads load success fully");
-                    mInterstitialAd.show();
-                }
-            }
-        }
+
         Log.v(TAG, "===selectedQuestion====" + selectedQuestion);
         Log.v(TAG, "===getQuoteListCount()====" + getQuoteListCount());
         int tempSelectedQuote = selectedQuestion + 1;

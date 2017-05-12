@@ -29,13 +29,13 @@ import com.google.android.gms.plus.PlusShare;
 
 public class GameOverFragment extends Fragment implements View.OnClickListener {
 
-    Listener mListener = null;
-    TextView great,Level,txtLevel,success,total_score,txtTotalScore,levelScore,txtLevelScore,share_score;
-    Button btnHome,btnPlayAgain;
-    Typeface tp;
+    private Listener mListener = null;
+    private TextView great,Level,txtLevel,total_score,txtTotalScore,levelScore,txtLevelScore,share_score;
+    private Button btnHome,btnPlayAgain;
+    private Typeface tp;
     private Facebook mFacebook = null;
-    ImageButton btnFb,btnGp,btnShare;
-    int levelNo,totalScore,lastlevelScore;
+    private ImageButton btnFb,btnGp,btnShare;
+    private int levelNo,totalScore,lastlevelScore;
     private AsyncFacebookRunner mAsyncRunner = null;
     private SharedPreferences settings;
 

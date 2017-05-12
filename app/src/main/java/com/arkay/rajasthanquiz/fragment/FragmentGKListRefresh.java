@@ -52,10 +52,10 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
     private View v;
     // initially offset will be 0, later will be updated while parsing the json
     private int offSet = 1;
-    Listener mListener = null;
-    AdapterView.OnItemClickListener listClickListener;
-    TextView txtAppTitle;
-    Typeface tp;
+    private Listener mListener = null;
+    private AdapterView.OnItemClickListener listClickListener;
+    private TextView txtAppTitle;
+    private Typeface tp;
     private int type;
     //ProgressDialog progress;
     public static final String NEWS_ID = "news_id";
@@ -210,14 +210,7 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
         offSet = offSet+1;
 
         String url="";
-//        progress = new ProgressDialog(getActivity());
-//        progress.setTitle("Please Wait!!");
-//        progress.setMessage("Data Loading..");
-//        progress.setCancelable(true);
-//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//        progress.show();
         Log.i(TAG," Off set after Refresh: "+offSet);
-        // showing refresh animation before making http call
         swipeRefreshLayout.setRefreshing(true);
 
         // appending offset to url
@@ -240,7 +233,7 @@ public class FragmentGKListRefresh extends Fragment implements SwipeRefreshLayou
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        Log.d(TAG, response.toString());
+                        //Log.d(TAG, response.toString());
 
                         if (response.length() > 0) {
 

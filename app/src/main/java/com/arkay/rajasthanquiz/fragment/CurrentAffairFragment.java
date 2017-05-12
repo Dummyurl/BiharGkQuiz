@@ -1,6 +1,5 @@
 package com.arkay.rajasthanquiz.fragment;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -42,20 +41,20 @@ import java.util.List;
 public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayoutBottom.OnRefreshListener{
 
 
-    ListView listview;
-    CurrentAffairAdapter currentAffairAdapter;
+    private ListView listview;
+    private CurrentAffairAdapter currentAffairAdapter;
     private CurrentAffairLevel level;
-    TextView txtAppTitle;
+    private TextView txtAppTitle;
     private SwipeRefreshLayoutBottom swipeRefreshLayout;
-    Typeface tp;
+
     private Handler mHandler;
-    Listener mListener = null;
+    private Listener mListener = null;
     private List<CurrentAffairLevel> dataArrayList;
     private CurrentAffairQuestionsDAO currentAffairQuestionsDAO;
     public static String TAG = MainApplication.class.getSimpleName();
     private int offSet = 1;
+
     AdapterView.OnItemClickListener listClickListener;
-    //private ProgressDialog progress;
 
     public static CurrentAffairFragment newInstance(Bundle bundle) {
         CurrentAffairFragment fragment = new CurrentAffairFragment();
@@ -102,8 +101,6 @@ public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayou
 
         level = new CurrentAffairLevel();
         mHandler = new Handler();
-        tp = Typeface.createFromAsset(getActivity().getAssets(),
-                "MarkoOne-Regular.ttf");
         txtAppTitle = (TextView) view.findViewById(R.id.txtAppTitle);
         txtAppTitle.setText(getResources().getString(R.string.current_affair_level));
 
@@ -122,8 +119,6 @@ public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayou
         currentAffairAdapter = new CurrentAffairAdapter(getActivity(),dataArrayList);
         listview.setAdapter(currentAffairAdapter);
 
-        tp = Typeface.createFromAsset(getActivity().getAssets(),
-                "MarkoOne-Regular.ttf");
         View v = new View(getActivity());
         v.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,1));
 
@@ -184,12 +179,6 @@ public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayou
 
 
     private void fetchMovies() {
-//        progress = new ProgressDialog(getActivity());
-//        progress.setTitle("Please Wait!!");
-//        progress.setMessage("Data Loading..");
-//        progress.setCancelable(true);
-//        progress.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//        progress.show();
 
         offSet = currentAffairQuestionsDAO.getTotalNoOfLevel();
         System.out.println("offset : "+offSet);
@@ -225,9 +214,6 @@ public class CurrentAffairFragment extends Fragment implements SwipeRefreshLayou
                                     Log.e(TAG, "JSON Parsing error: " + e.getMessage());
                                 }
                             }
-//                            if(progress.isShowing()) {
-//                                progress.cancel();
-//                            }
 
                             currentAffairAdapter.notifyDataSetChanged();
                         }else {

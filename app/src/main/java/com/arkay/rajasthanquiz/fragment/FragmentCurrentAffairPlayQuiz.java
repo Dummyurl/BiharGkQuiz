@@ -67,7 +67,6 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
 
     private CurrentAffairLevel level;
     private CurrentAffairQuestionsDAO questionDao;
-    //private static int levelNo=1;
     private int quextionIndex=0;
     private boolean isSoundEffect;
     private boolean isVibration;
@@ -77,37 +76,22 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
     private int score=0;
     private int correctQuestion=0;
     private int inCorrectQuestion=0;
-    ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
+    private ImageView img1,img2,img3,img4,imgOption1,imgOption2,imgOption3,imgOption4;
     private SharedPreferences settings;
-    private Animation animation;
-    Animation animationFromRight,animationFromLeft;
+    private Animation animationFromRight,animationFromLeft, animation, in, out;
     private MediaPlayer rightAnsware, wrongeAnsware;
     private final Handler mHandler = new Handler();
     private SharedPreferences.Editor editor;
-    TextView txtTrue,scoretxt,txtScore,txtFalse,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
+    private TextView txtTrue,txtScore,txtFalse,txtOutOfQue,txtQuestion,optionA,optionB,optionC,optionD,txtOption1,txtOption2,txtOption3,txtOption4;
 
-
-    Animation in;
-    Animation out;
-
-    ImageButton btnBookmark;
-    RelativeLayout relative1,relative2,relative3,relative4;
-    Typeface tp;
-
+    private ImageButton btnBookmark;
+    private RelativeLayout relative1,relative2,relative3,relative4;
+    private Typeface tp;
 
     private ProgressDialog progress;
+    private InterstitialAd mInterstitialAd;
+    private View view;
 
-    InterstitialAd mInterstitialAd;
-
-
-    View view;
-
-
-
-    private ProgressDialog dialog;
-
-
-    //public static String              APP_ID       = "262317043858138";
     private Facebook mFacebook    = null;
     private AsyncFacebookRunner mAsyncRunner = null;
     private Tracker mTracker;
@@ -164,7 +148,7 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
         super.onActivityCreated(savedInstanceState);
 
         view = getView();
-        dialog = new ProgressDialog(getActivity());
+        //dialog = new ProgressDialog(getActivity());
 
         settings = getActivity().getSharedPreferences(Constants.PREFS_NAME, 0);
 
@@ -339,10 +323,6 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
     public void onClick(View v)
     {
         if(quextionIndex<level.getQuestion().size()){
-//            relative1.setClickable(false);
-//            relative2.setClickable(false);
-//            relative3.setClickable(false);
-//            relative4.setClickable(false);
             switch(v.getId()){
                 case R.id.relative1:
                     level.getQuestion().get(quextionIndex).setAnsIndex(0);
@@ -724,11 +704,6 @@ public class FragmentCurrentAffairPlayQuiz extends Fragment
 
 
     public void getCurrentAffairQuestion(String url){
-
-        // appending offset to url
-       // String url = getResources().getString(R.string.get_current_affiar_question_from_web) + levelNo;
-
-      //  Log.i(TAG, "New URL: " + url);
 
         // Volley's json array request object
         final JsonArrayRequest req = new JsonArrayRequest(url,

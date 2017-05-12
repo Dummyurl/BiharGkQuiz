@@ -1,7 +1,6 @@
 package com.arkay.rajasthanquiz.fragment;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,8 +14,6 @@ import com.arkay.rajasthanquiz.R;
 public class FragmentWebsiteView extends Fragment {
 
 
-    private Context context;
-    private View v;
     private WebView webView;
 
     public static FragmentWebsiteView newInstance(Bundle bundle)
@@ -30,8 +27,6 @@ public class FragmentWebsiteView extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_website_view, container, false);
-        this.context = getActivity();
-        this.v = v;
         webView = (WebView) v.findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
         boolean isprivacy_policy = getArguments ().getBoolean("isprivacy_policy");
@@ -44,8 +39,7 @@ public class FragmentWebsiteView extends Fragment {
 
     private void startWebView(String url) {
 
-        //Create new webview Client to show progress dialog
-        //When opening a url or click on link
+        //Create new webview Client to show progress dialog When opening a url or click on link
 
         webView.setWebViewClient(new WebViewClient() {
             ProgressDialog progressDialog;

@@ -30,7 +30,7 @@ public class FragmentAboutApp extends Fragment implements View.OnClickListener {
     private TextView txtAppName, txt,txtDevelopedby,txtAllRightReserve;
     private ImageButton btnFacebook, btnGooglePlus;
     private Typeface tp,tpHindi;
-    DocumentView documentView;
+    private DocumentView documentView;
 
     public static FragmentAboutApp newInstance(Bundle bundle) {
         FragmentAboutApp fragment = new FragmentAboutApp();

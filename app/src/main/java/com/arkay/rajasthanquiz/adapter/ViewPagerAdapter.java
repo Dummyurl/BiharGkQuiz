@@ -24,20 +24,18 @@ import java.util.Date;
 
 public class ViewPagerAdapter extends PagerAdapter
 {
-    // Declare Variables
-    Context context;
-    LayoutInflater inflater;
-    ArrayList<GkInfoDetail> gkInfoDetails;
-    ImageView imgflag;
-    TextView lblStoryDetail;
-    public TextView txtStoryTitle;
-    private TextView lblPublish, lblcredit;
-    long startDate;
+
+    private Context context;
+    private LayoutInflater inflater;
+    private ArrayList<GkInfoDetail> gkInfoDetails;
+    private ImageView imgflag;
+    public TextView txtStoryTitle, lblStoryDetail,lblPublish, lblcredit;
+    private long startDate;
     private static final int SECOND_MILLIS = 1000;
     private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
     private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
     private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
-    int type;
+    private int type;
 
     public ViewPagerAdapter(Context context, ArrayList<GkInfoDetail> gkInfoDetails,int type)
     {

@@ -21,10 +21,10 @@ import com.arkay.rajasthanquiz.R;
 public class CategoryScreenFragment extends Fragment implements View.OnClickListener{
 
 
-    Listener mListener = null;
-    Typeface tp,tpHindi;
-    TextView txtAppTitle;
-    int category;
+    private Listener mListener = null;
+    private Typeface tpHindi;
+    private TextView txtAppTitle;
+    private int category;
     TextView txtLoginName1,txtLoginName2,txtLoginName3,txtLoginName4,txtLoginName5,txtLoginName6,txtLoginName7,txtLoginName8,txtLoginName9,txtLoginName10,txtLoginName11,txtLoginName12;
 
     ImageButton btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9,btn10,btn11,btn12;
@@ -70,8 +70,6 @@ public class CategoryScreenFragment extends Fragment implements View.OnClickList
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
-        tp = Typeface.createFromAsset(getActivity().getAssets(),
-                "MarkoOne-Regular.ttf");
 
         tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
                 "olivier_demo.ttf");

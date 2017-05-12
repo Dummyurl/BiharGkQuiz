@@ -23,10 +23,10 @@ public class GkAdapter extends BaseAdapter {
     private Activity activity;
     private List<GKInfo> gkInfos;
     private String[] bgColors;
-    Typeface tp,tpHindi;
+    private Typeface tp;
     private ImageView imgGk,imgLine;
     private TextView txtTitle,txtDesc,txtTimePublish,txtReadMore;
-    int type;
+    private int type;
 
 
     public GkAdapter(Activity activity, List<GKInfo> gkInfos,int type) {
@@ -65,8 +65,8 @@ public class GkAdapter extends BaseAdapter {
 
         tp = Typeface.createFromAsset(activity.getAssets(),
                 "Roboto-Regular.ttf");
-        tpHindi = Typeface.createFromAsset(activity.getAssets(),
-                "olivier_demo.ttf");
+//        tpHindi = Typeface.createFromAsset(activity.getAssets(),
+//                "olivier_demo.ttf");
 
 
         imgGk = (ImageView)v.findViewById(R.id.imgGk);
@@ -79,8 +79,8 @@ public class GkAdapter extends BaseAdapter {
 
         txtTitle.setText(gkInfos.get(position).getTitle());
         txtDesc.setText(gkInfos.get(position).getDesc());
-        txtTitle.setTypeface(tpHindi);
-        txtDesc.setTypeface(tpHindi);
+        //txtTitle.setTypeface(tpHindi);
+       // txtDesc.setTypeface(tpHindi);
         txtTimePublish.setTypeface(tp);
         txtReadMore.setTypeface(tp);
 

@@ -26,16 +26,17 @@ import java.util.List;
 
 public class FragmentScoreBoard extends Fragment implements
         View.OnClickListener{
-    Listener mListener = null;
-    LinearLayout main;
-    TextView txtQuestion, txtOption1, txtOption2, txtOption3, txtOption4, rightAns, txtLevelHeading;
-    TextView txtTotalTrue, txtTotalFalse, txtTotalScoreThisLevel, txtSkipQuestion;
-    Button btnHome, btnPlayAgain;
-    ImageView imgCircle;
-    List<View> scoreQuestionList = new ArrayList<View>();
+
+    private Listener mListener = null;
+    private LinearLayout main;
+    private TextView txtQuestion, txtOption1, txtOption2, txtOption3, txtOption4, rightAns, txtLevelHeading;
+    private TextView txtTotalTrue, txtTotalFalse, txtTotalScoreThisLevel, txtSkipQuestion;
+    private Button btnHome, btnPlayAgain;
+    private ImageView imgCircle;
+    private List<View> scoreQuestionList = new ArrayList<View>();
     boolean isLastLetLearn =false;
     private SharedPreferences settings;
-    Typeface tp,tpHindi;
+    private Typeface tp,tpHindi;
 
     public interface Listener {
         public void displyHomeScreen();
@@ -67,23 +68,16 @@ public class FragmentScoreBoard extends Fragment implements
     {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_score_board, container, false);
-
-        //getBundleArguments();
-
         settings = getActivity().getSharedPreferences(Constants.PREFS_NAME, 0);
 
         tpHindi = Typeface.createFromAsset(getActivity().getAssets(),
                 "olivier_demo.ttf");
-
         tp = Typeface.createFromAsset(getActivity().getAssets(),
                 "Roboto-Regular.ttf");
-        //QuestionsDAO questionDao = new QuestionsDAO(getActivity());
 
 
         txtLevelHeading = (TextView) v.findViewById(R.id.txtLevelHeading);
         txtLevelHeading.setText("");
-
-
 
 
         btnHome = (Button) v.findViewById(R.id.btnHome);

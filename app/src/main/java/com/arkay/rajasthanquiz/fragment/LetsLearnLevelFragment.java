@@ -1,9 +1,7 @@
 package com.arkay.rajasthanquiz.fragment;
 
 
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -32,14 +30,11 @@ import java.util.ArrayList;
 
 public class LetsLearnLevelFragment extends Fragment {
 
-    ListView listview;
-    AllListAdaptor levelAdapter;
-    TextView txtAppTitle;
-   // private SwipeRefreshLayoutBottom swipeRefreshLayout;
-    Typeface tp;
-    private Handler mHandler;
-    Listener mListener = null;
-    ArrayList<LearnListData> dataArrayList;
+    private ListView listview;
+    private AllListAdaptor levelAdapter;
+    private TextView txtAppTitle;
+    private Listener mListener = null;
+    private ArrayList<LearnListData> dataArrayList;
 
     public static LetsLearnLevelFragment newInstance(Bundle bundle) {
         LetsLearnLevelFragment fragment = new LetsLearnLevelFragment();
@@ -83,8 +78,7 @@ public class LetsLearnLevelFragment extends Fragment {
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
-        tp = Typeface.createFromAsset(getActivity().getAssets(),
-                "MarkoOne-Regular.ttf");
+
         txtAppTitle = (TextView) view.findViewById(R.id.txtAppTitle);
         txtAppTitle.setText(getResources().getString(R.string.select_level));
 
@@ -95,13 +89,9 @@ public class LetsLearnLevelFragment extends Fragment {
         levelAdapter = new AllListAdaptor(getActivity(), dataArrayList);
         listview.setAdapter(levelAdapter);
 
-        tp = Typeface.createFromAsset(getActivity().getAssets(),
-                "MarkoOne-Regular.ttf");
         View v = new View(getActivity());
         v.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 1));
 
-//        swipeRefreshLayout = (SwipeRefreshLayoutBottom) view.findViewById(R.id.swipe_refresh_layout);
-//        swipeRefreshLayout.setOnRefreshListener(this);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -112,9 +102,6 @@ public class LetsLearnLevelFragment extends Fragment {
     }
 
     private ArrayList<LearnListData> getAllInfoData() {
-        Bundle bundle = getArguments();
-        // isCategorySelect = bundle.getBoolean(Constants.IS_CATEGORY_SELECTE);
-        // Log.i(HomeActivity.TAG, "IS category Seleted : "+isCategorySelect);
         QuestionsDAO questionDAO = new QuestionsDAO(getActivity());
         dataArrayList = new ArrayList<LearnListData>();
 
